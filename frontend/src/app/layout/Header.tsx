@@ -23,10 +23,12 @@ const navStyles ={
     textDecoration: 'none',
     typography: 'h6',
     '&:hover': {
-        color: 'grey.500'
+        color: '#523a25',
     },
     '&.active': {
-        color: 'text.secondary'
+        // color: 'text.secondary',
+        backgroundColor: '#59484343',
+        borderRadius: '100px'
     }
 }
 
@@ -38,8 +40,8 @@ interface Props {
 
 export default function Header({darkMode, handleThemeChange} : Props) {
     return (
-        <AppBar position='static' sx={{mb: 4}}>
-            <Toolbar sx={{dosplay: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <AppBar position='static' sx={{mb: 4}} style={{ background: '#c5a297' }}>
+            <Toolbar  sx={{dosplay: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 
                 <Box display='flex' alignItems='center'>
                     <Typography variant='h6' component={NavLink}
