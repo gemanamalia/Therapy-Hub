@@ -30,8 +30,10 @@ const navStyles ={
     },
     '&.active': {
         // color: 'text.secondary',
-        backgroundColor: '#59484343',
-        borderRadius: '100px'
+        // backgroundColor: '#59484343',
+        // borderRadius: '100px',
+        color: '#523a25',
+        fontWeight: 'bold',
     }
 }
 

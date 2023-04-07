@@ -26,7 +26,7 @@ export default function ProductCard({product} : Props) {
                 }
                 title={product.name}
                 titleTypographyProps = {{
-                    sx: {fontWeight: 'bold', color: 'black'}
+                    sx: {fontWeight: 'bold'}
                 }}
             />
             <CardMedia

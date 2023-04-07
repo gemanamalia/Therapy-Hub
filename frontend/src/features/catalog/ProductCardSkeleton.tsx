@@ -13,7 +13,7 @@ export default function ProductCardSkeleton() {
                         animation="wave"
                         height={10}
                         width="80%"
-                        style={{ marginBottom: 6 }}
+                        style={{ marginBottom: 6}}
                     />
                 }
             />
