@@ -17,10 +17,10 @@ export default function ProductCard({product} : Props) {
     
 
     return (
-        <Card>
+        <Card style={{ boxShadow: '0px 0px 5px rgba(0,0,0,0.5)' }}>
             <CardHeader
                 avatar= {
-                    <Avatar sx={{bgcolor: 'secondary.main'}}>
+                    <Avatar sx={{bgcolor: '#ffa07a' }}>
                         {product.name.charAt(0).toLocaleUpperCase()}
                     </Avatar>
                 }
@@ -30,13 +30,13 @@ export default function ProductCard({product} : Props) {
                 }}
             />
             <CardMedia
-                sx={{ height: 140, backgroundSize : 'contain', bgcolor: 'primary.light' }}
+                sx={{ height: 230, backgroundSize : 'contain', bgcolor: '#ffffff' }}
                 image={product.pictureUrl}
                 title={product.name}
             />
             <CardContent>
-                <Typography gutterBottom color='secondary' variant="h5">
-                    {currencyFormat(product.price)}
+                <Typography gutterBottom color='#523a25' variant="h6">
+                    {currencyFormat(product.price)} lei
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                      {product.brand} / {product.type}
@@ -46,10 +46,16 @@ export default function ProductCard({product} : Props) {
                 <LoadingButton 
                     loading={status.includes('pendingAddItem' + product.id)}
                     onClick={() => dispatch(addBasketItemAsync({productId: product.id}))} 
-                    size="small">
-                       Add to cart
+                    size="small"
+                    style={{ color: '#007D14', fontWeight: 'bold', fontSize: '15px' }}
+                    >
+                       Adaugă în coș
                 </LoadingButton>
-                <Button component={Link} to={`/catalog/${product.id}`} size="small">View More</Button>
+                <Button component={Link} to={`/catalog/${product.id}`} size="small" 
+                    style={{ color: '#523a25', marginLeft: '25px' }}
+                >
+                    Vezi detalii
+                </Button>
             </CardActions>
         </Card>
     )

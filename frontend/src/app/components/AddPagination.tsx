@@ -1,6 +1,15 @@
 import { Box, Typography, Pagination } from "@mui/material";
 import { useState } from "react";
 import { MetaData } from "../models/pagination";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#523a25',
+    }
+  },
+});
 
 interface Props {
     metaData: MetaData,
@@ -25,13 +34,15 @@ export default function AppPagination({ metaData, onPageChange }: Props) {
                     : currentPage * pageSize
                 } of {totalCount} results
             </Typography>
-            <Pagination
-                color='secondary'
-                size='large'
-                count={totalPages}
-                page={pageNumber}
-                onChange={(e, page) => handlePageChange(page)}
-            />
+            <ThemeProvider theme={theme}>
+                <Pagination
+                    color='primary'
+                    size='large'
+                    count={totalPages}
+                    page={pageNumber}
+                    onChange={(e, page) => handlePageChange(page)}
+                />
+            </ThemeProvider>
         </Box>
     )
 }

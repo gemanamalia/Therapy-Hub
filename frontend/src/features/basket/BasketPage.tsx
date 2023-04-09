@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import BasketSummary from "./BasketSummary";
 import BasketTable from "./BasketTable";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#523a25',
+    }
+  },
+});
 
 export default function BaskePage() {
     const {basket, status } = useAppSelector(state => state.basket);
@@ -30,15 +39,18 @@ export default function BaskePage() {
                 <Grid item xs={6} />
                 <Grid item xs={6}>
                     <BasketSummary />
-                    <Button
-                        component={Link}
-                        to='/checkout'
-                        variant='contained'
-                        size='large'
-                        fullWidth
-                    >
-                        Checkout
-                    </Button>
+                    <ThemeProvider theme={theme}>
+                        <Button
+                            component={Link}
+                            to='/checkout'
+                            variant='contained'
+                            size='large'
+                            color="primary"
+                            fullWidth
+                        >
+                            Checkout
+                        </Button>
+                    </ThemeProvider>
                 </Grid>
 
             </Grid>

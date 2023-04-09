@@ -53,7 +53,7 @@ export default function Orders() {
                             <TableCell align="right">{order.orderDate.split('T')[0]}</TableCell>
                             <TableCell align="right">{order.orderStatus}</TableCell>
                             <TableCell align="right">
-                                <Button onClick={() => setSelectedOrderNumber(order.id)}>
+                                <Button onClick={() => setSelectedOrderNumber(order.id)} style={{ color: '#523a25', fontWeight: 'bolder' }}>
                                     View details
                                 </Button>
                             </TableCell>

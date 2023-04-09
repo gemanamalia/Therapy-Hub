@@ -1,5 +1,14 @@
 import { FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 import { useState } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#523a25',
+    }
+  },
+});
 
 interface Props {
     items: string[];
@@ -22,13 +31,16 @@ export default function CheckboxButtons({ items, checked, onChange }: Props) {
     return (
         <FormGroup>
             {items.map(item => (
-                <FormControlLabel
-                    key={item}
-                    control={<Checkbox
-                        checked={checkedItems.indexOf(item) !== -1}
-                        onClick={() => handleChecked(item)}
-                    />}
-                    label={item} />
+                <ThemeProvider theme={theme}>
+                    <FormControlLabel
+                        key={item}
+                        control={<Checkbox
+                            color='primary'
+                            checked={checkedItems.indexOf(item) !== -1}
+                            onClick={() => handleChecked(item)}
+                        />}
+                        label={item} />
+                </ThemeProvider>
             ))}
         </FormGroup>
     )

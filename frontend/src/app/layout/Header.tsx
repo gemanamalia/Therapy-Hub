@@ -6,9 +6,18 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { Box } from "@mui/system";
 import { Link, NavLink } from "react-router-dom";
-import { useStoreContext } from "../context/StoreContext";
 import { useAppSelector } from "../store/configureStore";
 import SignedInMenu from "./SignedInMenu";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffa07a',
+    }
+  },
+});
+
 
 const midLinks = [
     {title: 'catalog', path:'/catalog'},
@@ -77,11 +86,11 @@ export default function Header({darkMode, handleThemeChange} : Props) {
 
                 <Box display='flex' alignItems='center'>
                     <IconButton component={Link} to='/basket' size='large' edge='start' color='inherit' sx={{mr: 2}}>
-                        <Badge badgeContent={itemCount} color='secondary'>
-                            <ShoppingCart>
-                                
-                            </ShoppingCart>
+                    <ThemeProvider theme = {theme}>
+                        <Badge badgeContent={itemCount} color='primary'>
+                            <ShoppingCart></ShoppingCart>
                         </Badge>
+                    </ThemeProvider>
                     </IconButton>
 
                     { user ? (

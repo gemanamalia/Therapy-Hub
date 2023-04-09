@@ -4,6 +4,19 @@ import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, Tab
 import {  addBasketItemAsync, removeBasketItemAsync } from "./basketSlice";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { BasketItem } from "../../app/models/basket";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#007D14',
+    },
+    info: {
+        main: '#523a25',
+    }
+  },
+});
+
 
 interface Props {
     items: BasketItem[];
@@ -20,10 +33,10 @@ export default function BasketTable({items, isBasket = true} : Props) {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                        <TableCell>Product</TableCell>
-                        <TableCell align="right">Price</TableCell>
-                        <TableCell align="center">Quantity</TableCell>
-                        <TableCell align="right">Subtotal</TableCell>
+                        <TableCell>Produs</TableCell>
+                        <TableCell align="center">Preț</TableCell>
+                        <TableCell align="center">Cantitate</TableCell>
+                        <TableCell align="center">Subtotal</TableCell>
                         {isBasket && 
                             <TableCell align="right"></TableCell>} 
                         </TableRow>
@@ -43,7 +56,7 @@ export default function BasketTable({items, isBasket = true} : Props) {
                                     </span>
                                 </Box>
                             </TableCell>
-                            <TableCell align="right">${(item.price / 100).toFixed(2)}</TableCell>
+                            <TableCell align="center">{(item.price / 100).toFixed(2)} lei</TableCell>
                             <TableCell align="center">
                             {isBasket && 
                                 <LoadingButton 
@@ -57,26 +70,31 @@ export default function BasketTable({items, isBasket = true} : Props) {
                                 </LoadingButton>}
                                 {item.quantity}
                                 {isBasket && 
-                                <LoadingButton 
-                                    loading={status === 'pendingAddItem' + item.productId} 
-                                    onClick={() => dispatch(addBasketItemAsync({productId: item.productId}))}
-                                    color='secondary'
-                                >
-                                    <Add />
-                                </LoadingButton>}
+                                <ThemeProvider theme={theme}>
+                                    <LoadingButton 
+                                        loading={status === 'pendingAddItem' + item.productId} 
+                                        onClick={() => dispatch(addBasketItemAsync({productId: item.productId}))}
+                                        color='primary'
+                                    >
+                                        <Add />
+                                    </LoadingButton>
+                                </ThemeProvider>}
                             </TableCell>
-                            <TableCell align="right">${((item.price / 100) * item.quantity).toFixed(2)}</TableCell>
+                            <TableCell align="center">{((item.price / 100) * item.quantity).toFixed(2)} lei</TableCell>
                             {isBasket && 
                             <TableCell align="right">
-                                <LoadingButton 
-                                    loading={status === 'pendingRemoveItem' + item.productId + 'del'} 
-                                    onClick={() => dispatch(removeBasketItemAsync({
-                                        productId: item.productId, quantity: item.quantity, name:'del'
-                                    }))} 
-                                    color='error'
-                                >
-                                    <Delete />
-                                </LoadingButton>
+                                <ThemeProvider theme={theme}>
+                                    <LoadingButton 
+                                        loading={status === 'pendingRemoveItem' + item.productId + 'del'} 
+                                        onClick={() => dispatch(removeBasketItemAsync({
+                                            productId: item.productId, quantity: item.quantity, name:'del'
+                                        }))} 
+                                        color='info'
+                                    >
+                                        <Delete />
+                                    </LoadingButton>
+                                </ThemeProvider> 
+
                             </TableCell>}
                         </TableRow>
                         ))}

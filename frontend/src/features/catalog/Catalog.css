@@ -1,0 +1,9 @@
+.catalog-title {
+    margin-left: 35px;
+    margin-top: 50px;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    /* font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;  */
+    text-align: center;
+    color: #523a25;
+}

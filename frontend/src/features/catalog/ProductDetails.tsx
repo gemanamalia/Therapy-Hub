@@ -7,6 +7,16 @@ import LoadingComponent from "../../app/layout/LoadingComponent";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { addBasketItemAsync, removeBasketItemAsync } from "../basket/basketSlice";
 import { fetchProductAsync, productSelectors } from "./catalogSlice";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#523a25',
+    }
+  },
+});
+
 
 export default function ProductDetails() {
     const { basket, status } = useAppSelector(state => state.basket);
@@ -49,7 +59,7 @@ export default function ProductDetails() {
             <Grid item xs={6}>
                 <Typography variant='h3'>{product.name}</Typography>
                 <Divider sx={{ mb: 2 }} />
-                <Typography variant='h4' color='secondary'>${(product.price / 100).toFixed(2)}</Typography>
+                <Typography variant='h5' color='#523a25'>${(product.price / 100).toFixed(2)}</Typography>
                 <TableContainer>
                     <Table>
                         <TableBody sx={{ fontSize: '1.1em' }}>
@@ -77,29 +87,32 @@ export default function ProductDetails() {
                     </Table>
                 </TableContainer>
                 <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                        <TextField
-                            onChange={handleInputChange}
-                            variant={'outlined'}
-                            type={'number'}
-                            label={'Quantity in Cart'}
-                            fullWidth
-                            value={quantity}
-                        />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <LoadingButton
-                            disabled={(item?.quantity === quantity )|| (!item && quantity === 0)}
-                            loading={status.includes('pending')}
-                            onClick={handleUpdateCart}
-                            sx={{ height: '55px' }}
-                            color={'primary'}
-                            size={'large'}
-                            variant={'contained'}
-                            fullWidth>
-                            {item ? 'Update Quantity' : 'Add to Cart'}
-                        </LoadingButton>
-                    </Grid>
+                    <ThemeProvider theme={theme}>
+                        <Grid item xs={6}>
+                            <TextField
+                                onChange={handleInputChange}
+                                variant={'outlined'}
+                                type={'number'}
+                                label={'Quantity in Cart'}
+                                fullWidth
+                                value={quantity}
+                                color="primary"
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <LoadingButton
+                                disabled={(item?.quantity === quantity )|| (!item && quantity === 0)}
+                                loading={status.includes('pending')}
+                                onClick={handleUpdateCart}
+                                sx={{ height: '55px' }}
+                                color={'primary'}
+                                size={'large'}
+                                variant={'contained'}
+                                fullWidth>
+                                {item ? 'Update Quantity' : 'Add to Cart'}
+                            </LoadingButton>
+                        </Grid>
+                    </ThemeProvider>
                 </Grid>
             </Grid>
         </Grid>

@@ -29,12 +29,12 @@ function App() {
 
 
   const [darkMode, setDarkMode] = useState(false);
-  const paletteType = darkMode ?'dark' : 'light';
+  const paletteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
     palette: {
       mode: paletteType,
       background: {
-        default: paletteType === 'light' ? "#fdf6f1" : '#121212'
+        default: paletteType === 'light' ? "#ffffff" : '#121212'
       } 
     }
   })

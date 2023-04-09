@@ -21,19 +21,19 @@ export default function BasketSummary({subtotal}: Props) {
                     <TableBody>
                         <TableRow>
                             <TableCell colSpan={2}>Subtotal</TableCell>
-                            <TableCell align="right">{currencyFormat(subtotal)}</TableCell>
+                            <TableCell align="right">{currencyFormat(subtotal)} lei</TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell colSpan={2}>Delivery fee*</TableCell>
-                            <TableCell align="right">{currencyFormat(deliveryFee)}</TableCell>
+                            <TableCell colSpan={2}>Taxă transport*</TableCell>
+                            <TableCell align="right">{currencyFormat(deliveryFee)} lei</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell colSpan={2}>Total</TableCell>
-                            <TableCell align="right">{currencyFormat(subtotal + deliveryFee)}</TableCell>
+                            <TableCell align="right">{currencyFormat(subtotal + deliveryFee)} lei</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>
-                                <span style={{fontStyle: 'italic'}}>*Orders over $100 qualify for free delivery</span>
+                                <span style={{fontStyle: 'italic'}}>*Transport gratis la comenzile peste 100 de lei</span>
                             </TableCell>
                         </TableRow>
                     </TableBody>
