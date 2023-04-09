@@ -12,9 +12,9 @@ import "./Catalog.css";
 
 
 const sortOptions = [
-    {value: 'name', label: 'Alphabetical'},
-    {value: 'priceDesc', label: 'Price - High to Low'},
-    {value: 'price', label: 'Price - Low to High'},
+    {value: 'name', label: 'Alfabetic'},
+    {value: 'priceDesc', label: 'Pret crescător'},
+    {value: 'price', label: 'Pret descrescator'},
 ]
 export default function Catalog() {
     // const [products, setProducts] = useState<Product[]>([]);

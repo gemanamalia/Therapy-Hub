@@ -1,21 +1,22 @@
 .home-title {
-    margin-left: 35px;
     margin-top: 50px;
-    font-size: 45px;
+    font-size: 35px;
     font-family: 'Playfair Display', serif;
-    /* font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;  */
     text-align: center;
     color: #523a25;
+}
+
+.home-body {
+    margin-top: 100px;
 }
 
 .page-intro-home{
     /* margin-left: 35px; */
     margin-top: 50px;
     /* margin-bottom: 60px; */
-    font-size: 25px;
+    font-size: 18px;
     text-align: justify;
     /* margin-right: 45px; */
-    font-family: 'Playfair Display', serif;
-    /* font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;  */
+    font-family: Sans-Serif;
     color: #523a25
 }

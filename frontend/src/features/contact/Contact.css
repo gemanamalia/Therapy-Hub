@@ -1,9 +1,51 @@
 .contact-title {
-    margin-left: 35px;
     margin-top: 50px;
     font-size: 35px;
     font-family: 'Playfair Display', serif;
-    /* font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;  */
     text-align: center;
     color: #523a25;
+}
+
+.contact-body {
+    margin-top: 100px;
+    font-family: Sans-Serif;
+    color: #523a25;
+    font-size: 18px;
+}
+
+.advice-body {
+  margin-top: 100px;
+    font-family: Sans-Serif;
+    color: #523a25;
+    font-size: 18px;
+}
+
+.advice-ul li {
+  margin-top: 15px; 
+}
+
+.link-contact-body {
+  margin-top: 100px;
+  font-family: Sans-Serif;
+  color: #523a25;
+  font-size: 18px;
+}
+
+.contact-ul li, .contact-ul p {
+    margin-bottom: -10px;
+  }
+
+.contact-ul li {
+    font-weight: bold;
+  }
+
+  
+.contact-ul {
+    margin-bottom: 50px;
+}
+
+.a-contact-link {
+  color: #523a25;
+  margin-top: 15px; /* Ajustați valoarea după preferință */
+  display: block; /* Acest lucru va face ca tag-ul "a" să fie afișat ca un bloc și va muta textul de mai jos pe o nouă linie */
 }

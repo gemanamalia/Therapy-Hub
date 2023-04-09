@@ -18,6 +18,10 @@ namespace API.Data
 
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<PhoneContact> PhoneContacts { get; set; }
+
+        public DbSet<LinkContact>  LinkContacts { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
