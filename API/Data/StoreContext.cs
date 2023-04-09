@@ -21,6 +21,7 @@ namespace API.Data
         public DbSet<PhoneContact> PhoneContacts { get; set; }
 
         public DbSet<LinkContact>  LinkContacts { get; set; }
+        public DbSet<Testimonial>  Testimonials { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

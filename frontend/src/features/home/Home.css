@@ -1,9 +1,15 @@
+.home {
+    font-family: Sans-Serif;
+    /* font-family: 'Playfair Display', serif; */
+    color: #523a25;
+    font-size: 20px;
+}
+
 .home-title {
     margin-top: 50px;
     font-size: 35px;
     font-family: 'Playfair Display', serif;
     text-align: center;
-    color: #523a25;
 }
 
 .home-body {
@@ -11,12 +17,13 @@
 }
 
 .page-intro-home{
-    /* margin-left: 35px; */
     margin-top: 50px;
-    /* margin-bottom: 60px; */
-    font-size: 18px;
     text-align: justify;
-    /* margin-right: 45px; */
-    font-family: Sans-Serif;
-    color: #523a25
+}
+
+.testimonials {
+    font-family: 'Playfair Display', serif;
+    text-align: justify;
+    font-style: italic;
+    padding: 1px 30px;
 }
