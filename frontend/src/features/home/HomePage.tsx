@@ -20,7 +20,7 @@ export default function HomePage() {
                     <p className="page-intro-home">Clienții noștri vin la noi cu o gamă largă de provocări în domeniul sănătății mintale, de la stres și anxietate la depresie și traume. Dar ceea ce au toți în comun este dorința de a avea o viață mai bună și disponibilitatea de a investi în sănătatea lor mentală. Cu sprijinul și îndrumarea terapeuților noștri, clienții noștri reușesc să facă schimbări reale și durabile. Învață strategii noi de coping, câștigă noi perspective asupra gândurilor și emoțiilor lor și dezvoltă o mai mare reziliență în fața provocărilor vieții.</p>
                     <p className="page-intro-home">Suntem copleșiți de poveștile de speranță și vindecare pe care le auzim de la clienții noștri în fiecare zi. Iată doar câteva dintre testimonialele lor:</p>
                     <div className="testimonials">
-                        {testimonials.map((testimonial, i) => <p>"{testimonial.text}"</p>)}
+                        {testimonials.map((testimonial, i) => <p key={testimonial.id}>"{testimonial.text}"</p>)}
                     </div>
                     <p className="page-intro-home">Dacă ești pregătit să investești în sănătatea ta mentală și bunăstare, ne-ar face plăcere să te ajutăm. Răsfoiește portofoliul nostru de terapeuți astăzi și fă primul pas spre o viață mai fericită și mai sănătoasă.</p>
                 </div>

@@ -33,7 +33,7 @@ export default function BasketSummary({subtotal}: Props) {
                         </TableRow>
                         <TableRow>
                             <TableCell>
-                                <span style={{fontStyle: 'italic'}}>*Transport gratis la comenzile peste 110 de lei</span>
+                                <span style={{fontStyle: 'italic'}}>*Transport gratis la comenzile peste 100 de lei</span>
                             </TableCell>
                         </TableRow>
                     </TableBody>
