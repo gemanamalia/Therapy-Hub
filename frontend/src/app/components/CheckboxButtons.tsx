@@ -31,9 +31,8 @@ export default function CheckboxButtons({ items, checked, onChange }: Props) {
     return (
         <FormGroup>
             {items.map(item => (
-                <ThemeProvider theme={theme}>
+                <ThemeProvider theme={theme} key={item}>
                     <FormControlLabel
-                        key={item}
                         control={<Checkbox
                             color='primary'
                             checked={checkedItems.indexOf(item) !== -1}

@@ -24,11 +24,12 @@ export default function RadioButtonGroup({ options, onChange, selectedValue }: P
 
             >
                 {options.map(({ value, label }) => (
-                    <ThemeProvider theme={theme}>
+                    <ThemeProvider theme={theme} key={value}>
                         <FormControlLabel
                             value={value}
                             control={<Radio color="primary" />}
-                            label={label} key={value}
+                            label={label} 
+                            
                         />
                     </ThemeProvider>
                 ))}
