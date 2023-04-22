@@ -35,8 +35,8 @@ export default function ProductCard({product} : Props) {
                 title={product.name}
             />
             <CardContent>
-                <Typography gutterBottom color='#523a25' variant="h6">
-                    {currencyFormat(product.price)} lei
+                <Typography gutterBottom  variant="h6">
+                    {currencyFormat(product.price)} Lei
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                      {product.brand} / {product.type}

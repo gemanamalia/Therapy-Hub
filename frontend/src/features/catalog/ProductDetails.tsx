@@ -54,33 +54,33 @@ export default function ProductDetails() {
     return (
         <Grid container spacing={6}>
             <Grid item xs={6}>
-                <img src={product.pictureUrl} alt={product.name} style={{ width: '100%' }} />
+                <img src={product.pictureUrl} alt={product.name} style={{ width: '300px', height: "450px" }} />
             </Grid>
             <Grid item xs={6}>
                 <Typography variant='h3'>{product.name}</Typography>
                 <Divider sx={{ mb: 2 }} />
-                <Typography variant='h5' color='#523a25'>${(product.price / 100).toFixed(2)}</Typography>
+                <Typography variant='h5' color='#523a25'>{(product.price / 100).toFixed(2)} Lei</Typography>
                 <TableContainer>
                     <Table>
                         <TableBody sx={{ fontSize: '1.1em' }}>
                             <TableRow>
-                                <TableCell>Name</TableCell>
+                                <TableCell>Titlu</TableCell>
                                 <TableCell>{product.name}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Description</TableCell>
+                                <TableCell>Descriere</TableCell>
                                 <TableCell>{product.description}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Type</TableCell>
+                                <TableCell>Categorie</TableCell>
                                 <TableCell>{product.type}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Brand</TableCell>
+                                <TableCell>Autor</TableCell>
                                 <TableCell>{product.brand}</TableCell>
                             </TableRow>
                             <TableRow>
-                                <TableCell>Quantity in stock</TableCell>
+                                <TableCell>Cantitate disponibilă în stoc</TableCell>
                                 <TableCell>{product.quantityInStock}</TableCell>
                             </TableRow>
                         </TableBody>
@@ -93,7 +93,7 @@ export default function ProductDetails() {
                                 onChange={handleInputChange}
                                 variant={'outlined'}
                                 type={'number'}
-                                label={'Quantity in Cart'}
+                                label={'Cantitate în coș'}
                                 fullWidth
                                 value={quantity}
                                 color="primary"
@@ -109,7 +109,7 @@ export default function ProductDetails() {
                                 size={'large'}
                                 variant={'contained'}
                                 fullWidth>
-                                {item ? 'Update Quantity' : 'Add to Cart'}
+                                {item ? 'Actualizează cantitate' : 'Adaugă în coș'}
                             </LoadingButton>
                         </Grid>
                     </ThemeProvider>

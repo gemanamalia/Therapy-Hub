@@ -9,7 +9,7 @@ export default function Review() {
   return (
     <>
       <Typography variant="h6" gutterBottom>
-        Order summary
+        Rezumat comandă
       </Typography>
       {basket && 
       <BasketTable items={basket.items} isBasket={false}/> }

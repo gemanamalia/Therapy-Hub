@@ -44,19 +44,19 @@ export default function Inventory() {
     return (
         <>
             <Box display='flex' justifyContent='space-between'>
-                <Typography sx={{ p: 2 }} variant='h4'>Inventory</Typography>
-                <Button onClick={() => setEditMode(true)}  sx={{ m: 2 }} size='large' variant='contained'>Create</Button>
+                <Typography sx={{ p: 2 }} variant='h4'>Inventar</Typography>
+                <Button onClick={() => setEditMode(true)}  sx={{ m: 2 }} size='large' variant='contained'>Carte nouă</Button>
             </Box>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             <TableCell>#</TableCell>
-                            <TableCell align="left">Product</TableCell>
-                            <TableCell align="right">Price</TableCell>
-                            <TableCell align="center">Type</TableCell>
-                            <TableCell align="center">Brand</TableCell>
-                            <TableCell align="center">Quantity</TableCell>
+                            <TableCell align="left">Produs</TableCell>
+                            <TableCell align="right">Preț</TableCell>
+                            <TableCell align="center">Categorie</TableCell>
+                            <TableCell align="center">Autor</TableCell>
+                            <TableCell align="center">Cantitate</TableCell>
                             <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>

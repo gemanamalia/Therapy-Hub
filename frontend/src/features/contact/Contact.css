@@ -3,20 +3,20 @@
     font-size: 35px;
     font-family: 'Playfair Display', serif;
     text-align: center;
-    color: #523a25;
+    /* color: #523a25; */
 }
 
 .contact-body {
     margin-top: 100px;
     font-family: Sans-Serif;
-    color: #523a25;
+    /* color: #523a25; */
     font-size: 18px;
 }
 
 .advice-body {
   margin-top: 100px;
     font-family: Sans-Serif;
-    color: #523a25;
+    /* color: #523a25; */
     font-size: 18px;
 }
 
@@ -27,7 +27,7 @@
 .link-contact-body {
   margin-top: 100px;
   font-family: Sans-Serif;
-  color: #523a25;
+  /* color: #523a25; */
   font-size: 18px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .a-contact-link {
-  color: #523a25;
+  /* color: #523a25; */
   margin-top: 15px; /* Ajustați valoarea după preferință */
   display: block; /* Acest lucru va face ca tag-ul "a" să fie afișat ca un bloc și va muta textul de mai jos pe o nouă linie */
 }

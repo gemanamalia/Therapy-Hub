@@ -4,6 +4,7 @@ import { useAppSelector, useAppDispatch } from "../../app/store/configureStore";
 import { setProductParams } from "./catalogSlice";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -25,8 +26,8 @@ export default function Search() {
     return (
         <ThemeProvider theme={theme}>
             <TextField
-                color="primary"
-                label='Search products'
+                // color="primary"
+                label='Caută produse'
                 variant='outlined'
                 fullWidth
                 value={searchTerm || ''}
@@ -34,8 +35,8 @@ export default function Search() {
                     setSearchTerm(event.target.value);
                     debouncedSearch(event);
                 }}
-                // style={{ boxShadow: ' rgba(0,0,0,0.5)' }}
+                style={{ boxShadow: ' rgba(0,0,0,0.5)' }}
             />
-        </ThemeProvider>
+         </ThemeProvider>
     )
 }

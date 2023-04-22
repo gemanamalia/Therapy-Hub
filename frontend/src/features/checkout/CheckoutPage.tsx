@@ -13,9 +13,20 @@ import { LoadingButton } from "@mui/lab";
 import { StripeElementType } from '@stripe/stripe-js';
 import { useElements, useStripe } from "@stripe/react-stripe-js";
 import { CardCvcElement, CardExpiryElement, CardNumberElement } from "@stripe/react-stripe-js";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
-const steps = ['Shipping address', 'Review your order', 'Payment details'];
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#523a25',
+      }
+    },
+  });
+
+
+
+const steps = ['Adresă de livrare', 'Rezumat comandă', 'Detalii plată'];
 
 
 export default function CheckoutPage() {
@@ -136,9 +147,14 @@ export default function CheckoutPage() {
         <FormProvider {...methods}>
             <Paper variant="outlined" sx={{my: {xs: 3, md: 6}, p: {xs: 2, md: 3}}}>
                 <Typography component="h1" variant="h4" align="center">
-                    Checkout
+                    Finalizare comandă
                 </Typography>
-                <Stepper activeStep={activeStep} sx={{pt: 3, pb: 5}}>
+                <Stepper activeStep={activeStep} 
+                    sx={{
+                        pt: 5,
+                        pb: 5,
+                    }}
+                >
                     {steps.map((label) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
@@ -165,21 +181,26 @@ export default function CheckoutPage() {
                         ) : (
                         <form onSubmit={methods.handleSubmit(handleNext)}>
                             {getStepContent(activeStep)}
+
                             <Box sx={{display: 'flex', justifyContent: 'flex-end'}}>
                                 {activeStep !== 0 && (
-                                    <Button onClick={handleBack} sx={{mt: 3, ml: 1}}>
-                                        Back
+                                    <Button onClick={handleBack} sx={{mt: 3, ml: 1}} style={{backgroundColor: '#523a25', color: '#fff'}}>
+                                        Înapoi
                                     </Button>
                                 )}
-                                <LoadingButton
-                                    loading={loading}
-                                    disabled={submitDisabled()}
-                                    variant="contained"
-                                    type='submit'
-                                    sx={{mt: 3, ml: 1}}
-                                >
-                                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                                </LoadingButton>
+                                <ThemeProvider theme={theme}>
+                                    <LoadingButton
+                                        loading={loading}
+                                        disabled={submitDisabled()}
+                                        variant="contained"
+                                        type='submit'
+                                        sx={{mt: 3, ml: 1}}
+                                        color={'primary'}
+                                    >
+                                        {activeStep === steps.length - 1 ? 'Plasează comanda' : 'Continuă'}
+                                    </LoadingButton>
+                                </ThemeProvider>
+
                             </Box>
                         </form>
                     )}

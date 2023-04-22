@@ -58,7 +58,7 @@ export default function Catalog() {
                         <Paper sx={{ mb: 2, p: 2}} 
                             style={{ boxShadow: '0px 1px 9px  rgba(0,0,0,0.5)' }}
                         >
-                        <Typography>Order:</Typography>
+                        <Typography>Preț:</Typography>
                         <RadioButtonGroup 
                                 selectedValue={productParams.orderBy}
                                 options={sortOptions}
@@ -69,7 +69,7 @@ export default function Catalog() {
                         <Paper sx={{ mb: 2, p: 2}}
                             style={{ boxShadow: '0px 1px 9px  rgba(0,0,0,0.5)' }}
                         >                      
-                            <Typography>Filter by brand:</Typography>
+                            <Typography>Autor:</Typography>
                             <CheckboxButtons 
                                 items={brands}
                                 checked={productParams.brands}
@@ -80,7 +80,7 @@ export default function Catalog() {
                         <Paper sx={{ mb: 2, p: 2}}
                             style={{ boxShadow: '0px 1px 9px  rgba(0,0,0,0.5)' }}
                         >
-                            <Typography>Filter by product:</Typography>
+                            <Typography>Categorie:</Typography>
                             <CheckboxButtons 
                                 items={types}
                                 checked={productParams.types}

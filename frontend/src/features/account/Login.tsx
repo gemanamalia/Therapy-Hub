@@ -11,7 +11,16 @@ import { FieldValues, useForm } from 'react-hook-form' ;
 import { LoadingButton } from '@mui/lab';
 import { useAppDispatch } from '../../app/store/configureStore';
 import { signInUser } from './accountSlice';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#523a25',
+      }
+    },
+  });
 
 export default function Login() {
     const navigate = useNavigate();
@@ -34,7 +43,7 @@ export default function Login() {
     return (
         <Container component={Paper} maxWidth="sm" 
                 sx={{display: 'flex', flexDirection:'column', alignItems: 'center', p: 4}}>       
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: '#ffa07a' }}>
                 <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -59,20 +68,24 @@ export default function Login() {
                     error={!!errors.password}
                     helperText={errors?.password?.message as string}     
                 />
-                <LoadingButton
-                    loading={isSubmitting}
-                    disabled={!isValid}
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
-                >
-                Sign In
-                </LoadingButton>
+                <ThemeProvider theme={theme}>
+                    <LoadingButton
+                        loading={isSubmitting}
+                        disabled={!isValid}
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                        color={'primary'}
+                    >
+                    Sign In
+                    </LoadingButton>
+                </ThemeProvider>
+                
                 <Grid container>
                 <Grid item>
                     <Link to='/register' >
-                    {"Don't have an account? Sign Up"}
+                    {"Don't have an account? Register here"}
                     </Link>
                 </Grid>
                 </Grid>

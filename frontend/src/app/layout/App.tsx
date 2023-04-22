@@ -1,4 +1,4 @@
-import { CssBaseline, Container, createTheme, ThemeProvider } from "@mui/material";
+import { CssBaseline, Container, createTheme, ThemeProvider, Typography } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
@@ -34,8 +34,12 @@ function App() {
     palette: {
       mode: paletteType,
       background: {
-        default: paletteType === 'light' ? "#ffffff" : '#121212'
-      } 
+        default: paletteType === 'light' ? "#ffffff" : '#272829'
+      } ,
+      text: {
+        primary: paletteType === 'light' ? "#523a25" : "#ffffff"
+      }
+      
     }
   })
 
@@ -51,7 +55,7 @@ function App() {
       <ToastContainer position="bottom-right" hideProgressBar theme="colored" />
       <CssBaseline />
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
-      <Container>
+      <Container color="textPrimary">
         <Outlet />
       </Container>
     </ThemeProvider>

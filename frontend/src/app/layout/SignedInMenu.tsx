@@ -35,8 +35,8 @@ export default function SignedInMenu() {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem component={Link} to='/orders'>My orders</MenuItem>
+                <MenuItem onClick={handleClose} component={Link} to='/profile'>Profilul meu</MenuItem>
+                <MenuItem onClick={handleClose} component={Link} to='/orders'>Comenzile mele</MenuItem>
                 <MenuItem onClick={() => {
                     dispatch(signOut());
                     dispatch(clearBasket());

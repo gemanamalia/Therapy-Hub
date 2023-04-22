@@ -5,6 +5,17 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import agent from '../../app/api/agent';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#523a25',
+      }
+    },
+  });
+
 
 export default function Register() {
     const navigate = useNavigate();
@@ -29,7 +40,7 @@ export default function Register() {
 
     return (
         <Container component={Paper} maxWidth='sm' sx={{ p: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: '#ffa07a' }}>
                 <LockOutlined />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -85,15 +96,19 @@ export default function Register() {
                     error={!!errors.password}
                     helperText={errors?.password?.message as string}
                 />
-                <LoadingButton
-                    disabled={!isValid}
-                    loading={isSubmitting}
-                    type="submit"
-                    fullWidth
-                    variant="contained" sx={{ mt: 3, mb: 2 }}
-                >
-                    Register
-                </LoadingButton>
+                <ThemeProvider theme={theme}>
+                    <LoadingButton
+                        disabled={!isValid}
+                        loading={isSubmitting}
+                        type="submit"
+                        fullWidth
+                        color={'primary'}
+                        variant="contained" sx={{ mt: 3, mb: 2 }}
+                    >
+                        Register
+                    </LoadingButton>
+                </ThemeProvider>
+
                 <Grid container>
                     <Grid item>
                         <Link to='/login' style={{ textDecoration: 'none' }}>

@@ -30,7 +30,12 @@ export default function BaskePage() {
 
     // if (loading) return <LoadingComponent message="Loading basket..." />
 
-    if (!basket) return <Typography variant='h3'>Your basket is empty</Typography>
+    if (!basket) return (
+        <>
+             <Typography variant='h4'>Coșul tău de cumpărături este gol.</Typography>
+             <Typography variant='h4'>Adaugă produse și revino pentru a finaliza comanda.</Typography>
+        </>
+    )
 
     return (
         <>
@@ -48,7 +53,7 @@ export default function BaskePage() {
                             color="primary"
                             fullWidth
                         >
-                            Checkout
+                            Finalizare comandă
                         </Button>
                     </ThemeProvider>
                 </Grid>

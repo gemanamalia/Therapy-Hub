@@ -11,36 +11,36 @@ export default function AddressForm() {
   return (
     <>
         <Typography variant="h6" gutterBottom>
-            Shipping address
+            Adresă de livrare
         </Typography>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={12}>
-                    <AppTextInput  control={control} name='fullName' label='Full name'/>
+                    <AppTextInput  control={control} name='fullName' label='Nume și prenume'/>
                 </Grid>
                 <Grid item xs={12}>
-                    <AppTextInput  control={control} name='address1' label='Address 1'/>
+                    <AppTextInput  control={control} name='address1' label='Adresă 1'/>
                 </Grid>
                 <Grid item xs={12}>
-                    <AppTextInput  control={control} name='address2' label='Address 2'/>
+                    <AppTextInput  control={control} name='address2' label='Adresă 2'/>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <AppTextInput  control={control} name='city' label='City'/>
+                    <AppTextInput  control={control} name='city' label='Oraș'/>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                <AppTextInput  control={control} name='state' label='State'/>
+                <AppTextInput  control={control} name='state' label='Sector'/>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <AppTextInput  control={control} name='zip' label='Zipcode / Postal code'/>
+                    <AppTextInput  control={control} name='zip' label='Cod poștal'/>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <AppTextInput  control={control} name='country' label='country'/>
+                    <AppTextInput  control={control} name='country' label='Țară'/>
                 </Grid>
 
                 <Grid item xs={12}>
                     <AppCheckbox 
                         disabled={!formState.isDirty}
                         name='saveAddress' 
-                        label='Save this as default address' 
+                        label='Salvează această adresă ca implicită ' 
                         control={control} />
                 </Grid>
             </Grid>

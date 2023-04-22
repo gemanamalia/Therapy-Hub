@@ -14,8 +14,8 @@ export default function OrderDetailed({ order, setSelectedOrder }: Props) {
     return (
         <>
             <Box display='flex' justifyContent='space-between'>
-                <Typography sx={{ p: 2 }} gutterBottom variant='h4'>Order# {order.id} - {order.orderStatus}</Typography>
-                <Button onClick={() => setSelectedOrder(0)} sx={{ m: 2 }} size='large' variant='contained'>Back to orders</Button>
+                <Typography sx={{ p: 2 }} gutterBottom variant='h4'>Comanda# {order.id} - {order.orderStatus}</Typography>
+                <Button onClick={() => setSelectedOrder(0)} style={{backgroundColor: '#523a25', color: '#fff'}} sx={{ m: 2 }} size='large' variant='contained'>Înapoi la comenzi</Button>
             </Box>
             <BasketTable items={order.orderItems as BasketItem[]} isBasket={false} />
             <Grid container>

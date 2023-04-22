@@ -51,27 +51,27 @@ export default function ProductForm({product, cancelEdit}: Props) {
     return (
         <Box component={Paper} sx={{p: 4}}>
             <Typography variant="h4" gutterBottom sx={{mb: 4}}>
-                Product Details
+                Detalii produs
             </Typography>
             <form onSubmit={handleSubmit(handleSubmitData)}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={12}>
-                        <AppTextInput control={control} name='name' label='Product name' />
+                        <AppTextInput control={control} name='name' label='Titlu produs' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <AppSelectList control={control} items={brands} name='brand' label='Brand' />
+                        <AppSelectList control={control} items={brands} name='brand' label='Autor' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <AppSelectList control={control} items={types} name='type' label='Type' />
+                        <AppSelectList control={control} items={types} name='type' label='Categorie' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <AppTextInput type='number' control={control} name='price' label='Price' />
+                        <AppTextInput type='number' control={control} name='price' label='Preț' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <AppTextInput type='number' control={control} name='quantityInStock' label='Quantity in Stock' />
+                        <AppTextInput type='number' control={control} name='quantityInStock' label='Cantitate în stoc' />
                     </Grid>
                     <Grid item xs={12}>
-                        <AppTextInput multiline={true} rows={4} control={control} name='description' label='Description' />
+                        <AppTextInput multiline={true} rows={4} control={control} name='description' label='Descriere' />
                     </Grid>
                     <Grid item xs={12}>
                         <Box display='flex' justifyContent='space-between' alignItems='center'>
@@ -87,7 +87,7 @@ export default function ProductForm({product, cancelEdit}: Props) {
                 </Grid>
                 <Box display='flex' justifyContent='space-between' sx={{mt: 3}}>
                     <Button onClick={cancelEdit} variant='contained' color='inherit'>Cancel</Button>
-                    <LoadingButton loading={isSubmitting} type='submit' variant='contained' color='success'>Submit</LoadingButton>
+                    <LoadingButton loading={isSubmitting} type='submit' variant='contained' color='success'>Salvează</LoadingButton>
                 </Box>
             </form>
         </Box>

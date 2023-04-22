@@ -33,10 +33,10 @@ export default function Orders() {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Order Number</TableCell>
+                        <TableCell>Număr comandă</TableCell>
                         <TableCell align="right">Total</TableCell>
-                        <TableCell align="right">Order Date</TableCell>
-                        <TableCell align="right">Order Status</TableCell>
+                        <TableCell align="right">Data comandă</TableCell>
+                        <TableCell align="right">Status comandă</TableCell>
                         <TableCell align="right"></TableCell>
                     </TableRow>
                 </TableHead>
@@ -49,12 +49,12 @@ export default function Orders() {
                             <TableCell component="th" scope="row">
                                 {order.id}
                             </TableCell>
-                            <TableCell align="right">{currencyFormat(order.total)}</TableCell>
+                            <TableCell align="right">{currencyFormat(order.total)} Lei</TableCell>
                             <TableCell align="right">{order.orderDate.split('T')[0]}</TableCell>
                             <TableCell align="right">{order.orderStatus}</TableCell>
                             <TableCell align="right">
                                 <Button onClick={() => setSelectedOrderNumber(order.id)} style={{ color: '#523a25', fontWeight: 'bolder' }}>
-                                    View details
+                                    Vezi detalii
                                 </Button>
                             </TableCell>
                         </TableRow>

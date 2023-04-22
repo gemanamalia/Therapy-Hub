@@ -88,7 +88,7 @@ export default function Header({darkMode, handleThemeChange} : Props) {
                             to={'/inventory'}
                             sx={ navStyles }
                         >
-                            INVENTORY
+                            INVENTAR
                     </ListItem>}
                 </List>
 

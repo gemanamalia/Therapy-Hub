@@ -1,0 +1,33 @@
+.profile {
+    font-family: Sans-Serif;
+    /* font-family: 'Playfair Display', serif; */
+    /* color: #523a25; */
+    font-size: 20px;
+}
+
+.profile-title {
+    margin-top: 50px;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.edit-button {
+    width: 130px;
+    height: 50px;
+    background-color:#523a25;
+    color: white;
+    font-size: 17px;
+    font-family: Sans-Serif;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.edit-button:hover {
+    background-color:#261b11;
+}
+
+.profile-body {
+    margin-top: 100px;
+}
