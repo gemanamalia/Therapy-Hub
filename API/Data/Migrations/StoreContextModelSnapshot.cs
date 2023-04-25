@@ -225,6 +225,12 @@ namespace API.Data.Migrations
                             Id = 2,
                             Name = "Admin",
                             NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Doctor",
+                            NormalizedName = "DOCTOR"
                         });
                 });
 

@@ -1,12 +1,11 @@
 import { LockOutlined } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
 import { Avatar, Box, Container, Grid, Paper, TextField, Typography } from '@mui/material';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import agent from '../../app/api/agent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 
 const theme = createTheme({
     palette: {
@@ -38,6 +37,18 @@ export default function Register() {
         }
     }
 
+    // firebase register
+    // async function registerFirebase(data: FieldValues) {
+    //     try {
+    //         console.log("before register: ", data.email, data.password);
+    //         const user = await createUserWithEmailAndPassword(auth, data.email, data.password);
+    //         console.log("after register", user);
+    //     } catch (error: any) {
+    //         console.log(error.message);
+    //     }
+    // };
+
+
     return (
         <Container component={Paper} maxWidth='sm' sx={{ p: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Avatar sx={{ m: 1, bgcolor: '#ffa07a' }}>
@@ -51,6 +62,9 @@ export default function Register() {
                     .then(() => {
                         toast.success('Registration successful! You can now login');
                         navigate('/login');
+
+                        // firebase register
+                        // registerFirebase(data);
                     })
                     .catch(error => handleApiErrors(error)))}
                 noValidate sx={{ mt: 1 }}

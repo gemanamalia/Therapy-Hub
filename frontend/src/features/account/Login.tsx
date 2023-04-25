@@ -9,10 +9,9 @@ import { Paper } from '@mui/material';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FieldValues, useForm } from 'react-hook-form' ;
 import { LoadingButton } from '@mui/lab';
-import { useAppDispatch } from '../../app/store/configureStore';
+import { useAppDispatch, useAppSelector } from '../../app/store/configureStore';
 import { signInUser } from './accountSlice';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 
 const theme = createTheme({
     palette: {
@@ -22,6 +21,7 @@ const theme = createTheme({
     },
   });
 
+
 export default function Login() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,15 +29,29 @@ export default function Login() {
     const {register, handleSubmit, formState: {isSubmitting, errors, isValid}} = useForm({
         mode: 'onTouched'
     });
-   
+
+
+    // firebase login
+    // async function loginFirebase (data: FieldValues) {
+    //     try {
+    //         console.log("before login: ", data.username, data.password);
+    //         const user = await signInWithEmailAndPassword(auth, data.username+"@test.com", data.password);
+    //         console.log("after login: ", data.username, data.password);
+    //     } catch (error: any) {
+    //         console.log(error.message);
+    //     }
+    // };
+
+
     async function submitForm(data: FieldValues) {
         try {
             await dispatch(signInUser(data));
             navigate(location.state?.from || '/catalog');
+            // firebase login
+            // loginFirebase(data);
         } catch (error) {
             console.log(error);
         }
-      
     }
 
     return (
@@ -49,6 +63,7 @@ export default function Login() {
             <Typography component="h1" variant="h5">
                 Sign in
             </Typography>
+
             <Box component="form" onSubmit={handleSubmit(submitForm)} noValidate sx={{ mt: 1 }}>
                 <TextField
                     margin="normal"
@@ -66,7 +81,7 @@ export default function Login() {
                     type="password"
                     {... register('password', {required: 'Password is required'})}  
                     error={!!errors.password}
-                    helperText={errors?.password?.message as string}     
+                    helperText={errors?.password?.message as string} 
                 />
                 <ThemeProvider theme={theme}>
                     <LoadingButton
@@ -90,6 +105,7 @@ export default function Login() {
                 </Grid>
                 </Grid>
             </Box>
+
         </Container>
     );
 }

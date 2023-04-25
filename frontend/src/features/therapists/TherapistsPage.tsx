@@ -1,8 +1,7 @@
-import { Alert, AlertTitle, Button, ButtonGroup, Container, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { useState } from "react";
 import agent from "../../app/api/agent";
 
-export default function AboutPage() {
+export default function TherapistsPage() {
     const [validationErrors, setValidationErrors] = useState<String[]>([]);
     
     function getValidationError() {

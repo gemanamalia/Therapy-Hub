@@ -343,7 +343,8 @@ namespace API.Data.Migrations
                 values: new object[,]
                 {
                     { 1, null, "Member", "MEMBER" },
-                    { 2, null, "Admin", "ADMIN" }
+                    { 2, null, "Admin", "ADMIN" },
+                    { 3, null, "Doctor", "DOCTOR" }
                 });
 
             migrationBuilder.CreateIndex(

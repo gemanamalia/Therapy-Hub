@@ -21,7 +21,7 @@ const theme = createTheme({
 
 const midLinks = [
     {title: 'shop', path:'/catalog'},
-    {title: 'about', path:'/about'},
+    {title: 'psihologi', path:'/therapists'},
     {title: 'resurse', path:'/contact'},
 ]
 

@@ -19,7 +19,6 @@ namespace API.Data
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<PhoneContact> PhoneContacts { get; set; }
-
         public DbSet<LinkContact>  LinkContacts { get; set; }
         public DbSet<Testimonial>  Testimonials { get; set; }
 
@@ -36,7 +35,8 @@ namespace API.Data
             builder.Entity<Role>()
                 .HasData(
                     new Role{Id = 1, Name = "Member", NormalizedName = "MEMBER"},
-                    new Role{Id = 2, Name = "Admin", NormalizedName = "ADMIN"}
+                    new Role{Id = 2, Name = "Admin", NormalizedName = "ADMIN"},
+                    new Role{Id = 3, Name = "Doctor", NormalizedName = "DOCTOR"}
                 );
         }
     }

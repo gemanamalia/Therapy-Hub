@@ -20,6 +20,15 @@ namespace API.Data
                 await userManager.CreateAsync(user, "Pa$$w0rd");
                 await userManager.AddToRoleAsync(user, "member");
 
+                var doctor = new User 
+                {
+                    UserName = "ben",
+                    Email = "ben@test.com"
+                };
+
+                await userManager.CreateAsync(doctor, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor, "doctor");
+            
                 var admin = new User 
                 {
                     UserName = "admin",
@@ -27,8 +36,9 @@ namespace API.Data
                 };
 
                 await userManager.CreateAsync(admin, "Pa$$w0rd");
-                await userManager.AddToRolesAsync(admin, new[]  {"Member", "Admin"});
+                await userManager.AddToRolesAsync(admin, new[]  {"Member", "Admin", "Doctor"});
             }
+               
 
 
             // link contacts

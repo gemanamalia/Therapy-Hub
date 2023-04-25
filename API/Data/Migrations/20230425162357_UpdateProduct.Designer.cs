@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20230422201916_UpdateProduct")]
+    [Migration("20230425162357_UpdateProduct")]
     partial class UpdateProduct
     {
         /// <inheritdoc />
@@ -228,6 +228,12 @@ namespace API.Data.Migrations
                             Id = 2,
                             Name = "Admin",
                             NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Doctor",
+                            NormalizedName = "DOCTOR"
                         });
                 });
 
