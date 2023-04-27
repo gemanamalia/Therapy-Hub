@@ -26,16 +26,17 @@ export const router = createBrowserRouter([
             {element: <RequireAuth />, children: [
               { path: 'checkout', element: <CheckoutWrapper />},
               { path: 'orders', element: <Orders />},
-              {path: 'profile', element: <Profile />},
+              { path: 'profile', element: <Profile />},
+              { path: 'therapists', element: <TherapistsPage />},
             ]},
             // admin routes
             {element: <RequireAuth roles={['Admin']} />, children: [
                 { path: 'inventory', element: <Inventory />},
               ]},
+            
             { path: '', element: <HomePage />},
             { path: 'catalog', element: <Catalog />},
             { path: 'catalog/:id', element: <ProductDetails/>},
-            { path: 'therapists', element: <TherapistsPage />},
             { path: 'contact', element: <ContactPage />},
             { path: 'server-error', element: <ServerError />},
             { path: 'not-found', element: <NotFound />},

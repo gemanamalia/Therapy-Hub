@@ -32,6 +32,13 @@ namespace API.Data
                 .HasForeignKey<UserAddress>(a => a.Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.Entity<User>()
+                .HasOne(a => a.Portofolio)
+                .WithOne()
+                .HasForeignKey<UserPortofolio>(a => a.Id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
             builder.Entity<Role>()
                 .HasData(
                     new Role{Id = 1, Name = "Member", NormalizedName = "MEMBER"},

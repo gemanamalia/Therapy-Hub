@@ -2,6 +2,7 @@ using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
+using API.RequestHelpers;
 using API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -113,6 +114,50 @@ namespace API.Controllers
         private string GetBuyerId()
         {
             return User.Identity?.Name ?? Request.Cookies["buyerId"];
+        }
+
+
+         
+        [Authorize]
+        [HttpGet("doctors")]
+        public async Task<ActionResult<List<User>>> GetAllDoctors()
+        {
+            var doctors = await  _context.Users
+                .Where(x => x.Role == "doctor")
+                .ToListAsync();
+
+            return doctors;
+        }
+
+        [Authorize]
+        [HttpGet("portofolio")]
+        public async Task<ActionResult<UserPortofolio>> GetPortofolio()
+        {
+            return await _userManager.Users
+                .Where(x => x.UserName == User.Identity.Name)
+                .Select(user => user.Portofolio)
+                .FirstOrDefaultAsync();
+        }
+
+        [Authorize]
+        [HttpPost("savePortofolio")]
+        public async Task<ActionResult> SavePortofolio(Portofolio portof)
+        {
+            var user = await _context.Users
+                    .Include(a => a.Portofolio)
+                    .FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);
+
+            var portofolio = new UserPortofolio
+                {
+                    ContactAddress = portof.ContactAddress,
+                    Description = portof.Description,
+                    Phone = portof.Phone
+                };
+                user.Portofolio = portofolio;
+            
+            var result = await _context.SaveChangesAsync() > 0;
+
+            return Ok();
         }
 
     }

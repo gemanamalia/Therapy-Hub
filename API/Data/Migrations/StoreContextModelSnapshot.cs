@@ -291,6 +291,9 @@ namespace API.Data.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Role")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
@@ -342,6 +345,25 @@ namespace API.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserAddress");
+                });
+
+            modelBuilder.Entity("API.Entities.UserPortofolio", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ContactAddress")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserPortofolio");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -542,6 +564,15 @@ namespace API.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("API.Entities.UserPortofolio", b =>
+                {
+                    b.HasOne("API.Entities.User", null)
+                        .WithOne("Portofolio")
+                        .HasForeignKey("API.Entities.UserPortofolio", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("API.Entities.Role", null)
@@ -606,6 +637,8 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.User", b =>
                 {
                     b.Navigation("Address");
+
+                    b.Navigation("Portofolio");
                 });
 #pragma warning restore 612, 618
         }
