@@ -12,22 +12,105 @@
     text-align: center;
 }
 
-.edit-button {
+.profile-body {
+    margin-top: 100px;
+    display: block;
+}
+
+.profile-body li {
+    font-size: 18px;
+    margin-top: 30px;
+    list-style: none;
+}
+
+.profile-body p {
+    margin-top: -15px;
+  }
+  
+.open-button {
     width: 130px;
-    height: 50px;
+    height: 45px;
     background-color:#523a25;
     color: white;
     font-size: 17px;
     font-family: Sans-Serif;
     border-radius: 5px;
     cursor: pointer;
-    
 }
 
-.edit-button:hover {
+.open-button:hover {
     background-color:#261b11;
 }
 
-.profile-body {
-    margin-top: 100px;
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal-form {
+    background-color: #fff;
+    width: 400px;
+    height: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    border-radius: 5px;
+  }
+
+.modal-label {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+  }  
+
+.modal-input {
+    display: block;
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#description {
+    height: 100px;
+    resize: none;
+}
+
+.save-button {
+    width: 130px;
+    height: 45px;
+    background-color:#523a25;
+    color: white;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;   
+}
+
+.close-button {
+    width: 130px;
+    height: 45px;
+    background-color:#523a25;
+    color: white;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.save-button:hover {
+    background-color:#261b11;
+}
+
+.button-grid {
+    margin-top: 30px;
 }

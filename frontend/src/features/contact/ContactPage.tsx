@@ -39,7 +39,7 @@ export default function ContactPage() {
                 <h3>Dacă ai nevoie de ajutor:</h3>
                 <p>Este important să știi că aceste numere de telefon sunt disponibile pentru a oferi suport emoțional și consiliere și sunt strict confidențiale. Dacă ai nevoie de ajutor sau cunoști pe cineva care ar putea avea nevoie, încurajează acea persoană să caute ajutor și să utilizeze aceste resurse disponibile. Solicitarea de sprijin este un semn de curaj și putere.</p>
                 {contacs.map(contact => (
-                    <ul className="contact-ul">
+                    <ul key={contact.id} className="contact-ul">
                         <li>{contact.title}</li>
                         <p>{contact.description}</p>
                         <p>Nr. de telefon: <b>{contact.phone}</b></p>
@@ -50,7 +50,7 @@ export default function ContactPage() {
             <div className="link-contact-body">
                 <h3>Alte resurse:</h3>
                 {linkContacts.map(contact => (
-                    <ul className="contact-ul">
+                    <ul key={contact.id} className="contact-ul">
                         <li>{contact.title}</li>
                         <p>{contact.description}</p>
                         <a href={contact.link} className="a-contact-link">{contact.link}</a>
