@@ -31,6 +31,16 @@ namespace API.Data
                 await userManager.CreateAsync(doctor, "Pa$$w0rd");
                 await userManager.AddToRoleAsync(doctor, "doctor");
             
+                var doctor2 = new User 
+                {
+                    UserName = "ana",
+                    Email = "ana@test.com",
+                    Role = "doctor"
+                };
+
+                await userManager.CreateAsync(doctor2, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor2, "doctor");
+            
                 var admin = new User 
                 {
                     UserName = "admin",

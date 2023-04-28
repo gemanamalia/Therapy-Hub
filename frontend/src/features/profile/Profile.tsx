@@ -6,10 +6,7 @@ import { Portofolio } from "../../app/models/portofolio";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import Modal from '@mui/material/Modal';
 import { Grid } from "@mui/material";
-
-
   
-
 export default function Profile() {
     const {user} = useAppSelector(state => state.account);
     const [loading, setLoading] = useState(true); 

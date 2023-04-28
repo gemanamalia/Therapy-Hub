@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20230425213854_UpdateProduct")]
+    [Migration("20230428130401_UpdateProduct")]
     partial class UpdateProduct
     {
         /// <inheritdoc />
@@ -362,6 +362,9 @@ namespace API.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PictureUrl")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

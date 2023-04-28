@@ -1,0 +1,71 @@
+.therapists {
+    font-family: Sans-Serif;
+    /* font-family: 'Playfair Display', serif; */
+    /* color: #523a25; */
+    font-size: 20px;
+}
+
+.therapists-title {
+    margin-top: 50px;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+
+
+/* portofolio page */
+
+.therapists-info {
+    list-style: none;
+    margin-top: 100px;
+    font-size: 18px;
+    margin-bottom: 100px;
+}
+
+.therapists-list{
+    list-style: none;
+    display:flex;
+    align-items: center;
+    width: 95%;
+    border-top: 10px solid #75615b;
+    border-bottom: 10px solid #75615b;
+    /* border-radius: 200px; */
+    border-top-left-radius: 150px 350px;
+    border-top-right-radius: 50px 40px;
+    border-bottom-left-radius: 150px 350px;
+    border-bottom-right-radius: 50px 40px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.therapist-info {
+    margin-left: 30px;
+    text-align: justify;
+}
+
+.contact-info {
+    margin-left: 20px;
+}
+
+.therapist-image {
+    border-radius: 5px;
+    height: 330px;
+    width: 270px;
+}
+
+.booking-button {
+    background-color: #2e5041;
+    color: white;
+    font-size: 18px;
+    width: 220px;
+    height: 60px;
+    border-radius: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.booking-button:hover {
+    background-color: #41705b;
+}

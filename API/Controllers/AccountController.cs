@@ -140,6 +140,16 @@ namespace API.Controllers
         }
 
         [Authorize]
+        [HttpGet("{id}", Name="portofolioByUserId")]
+        public async Task<ActionResult<UserPortofolio>> GetPortofolioByUserId(int id)
+        {
+            return await _userManager.Users
+                .Where(x => x.Id == id)
+                .Select(user => user.Portofolio)
+                .FirstOrDefaultAsync();
+        }
+
+        [Authorize]
         [HttpPost("savePortofolio")]
         public async Task<ActionResult> SavePortofolio(Portofolio portof)
         {
@@ -151,7 +161,8 @@ namespace API.Controllers
                 {
                     ContactAddress = portof.ContactAddress,
                     Description = portof.Description,
-                    Phone = portof.Phone
+                    Phone = portof.Phone,
+                    PictureUrl = portof.PictureUrl
                 };
                 user.Portofolio = portofolio;
             

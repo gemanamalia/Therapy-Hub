@@ -110,7 +110,9 @@ const Account = {
     currentUser: () => requests.get('account/currentUser'),
     fetchAddress: () => requests.get('account/savedAddress'),
     fetchPortofolio: () => requests.get('account/portofolio'),
-    savePortofolio: (values: any) => requests.post('account/savePortofolio', values)
+    savePortofolio: (values: any) => requests.post('account/savePortofolio', values),
+    getDoctors:() => requests.get('account/doctors'),
+    getPortofolioByUserId:(id: number) => requests.get(`account/${id}`)
 }
 
 const Orders = {
