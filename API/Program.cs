@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using API.Data;
 using API.Entities;
 using API.Middleware;
@@ -44,6 +45,13 @@ builder.Services.AddSwaggerGen(c =>
         }
     });   
 });
+
+// added by me
+// builder.Services.AddControllers().AddJsonOptions(options =>
+// {
+//     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+// });
+
 
 
 builder.Services.AddDbContext<StoreContext>(opt =>

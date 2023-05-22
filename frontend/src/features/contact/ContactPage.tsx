@@ -2,6 +2,7 @@ import "./Contact.css";
 import { useEffect, useState } from "react";
 import { phoneContact } from "../../app/models/phoneContact";
 import { linkContact } from "../../app/models/linkContact";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 export default function ContactPage() {
     const [contacs, setContacts] = useState<phoneContact[]>([]);
@@ -12,13 +13,17 @@ export default function ContactPage() {
         fetch('http://localhost:5000/api/PhoneContact')
         .then(response => response.json())
         .then(data => setContacts(data))
+        .finally(() => setLoading(false))
     }, [])
 
     useEffect(() => {
         fetch("http://localhost:5000/api/LinkContact")
           .then((response) => response.json())
-          .then((data) => setLinkContacts(data));
+          .then((data) => setLinkContacts(data))
+          .finally(() => setLoading(false))
       }, []);
+
+    if (loading) return <LoadingComponent message="Loading resourcers infos..." />
 
     return (
         <>

@@ -17,6 +17,37 @@ namespace API.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
 
+            modelBuilder.Entity("API.Entities.Appointment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Day")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DoctorName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("End")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Start")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Appointments");
+                });
+
             modelBuilder.Entity("API.Entities.Basket", b =>
                 {
                     b.Property<int>("Id")
@@ -59,6 +90,37 @@ namespace API.Data.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("BasketItems");
+                });
+
+            modelBuilder.Entity("API.Entities.Booking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Day")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("End")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PartnerId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PartnerName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Start")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Bookings");
                 });
 
             modelBuilder.Entity("API.Entities.LinkContact", b =>
@@ -468,6 +530,17 @@ namespace API.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("API.Entities.Appointment", b =>
+                {
+                    b.HasOne("API.Entities.User", "User")
+                        .WithMany("Appointments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("API.Entities.BasketItem", b =>
                 {
                     b.HasOne("API.Entities.Basket", "Basket")
@@ -485,6 +558,17 @@ namespace API.Data.Migrations
                     b.Navigation("Basket");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("API.Entities.Booking", b =>
+                {
+                    b.HasOne("API.Entities.User", "User")
+                        .WithMany("Bookings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("API.Entities.OrderAggregate.Order", b =>
@@ -640,6 +724,10 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.User", b =>
                 {
                     b.Navigation("Address");
+
+                    b.Navigation("Appointments");
+
+                    b.Navigation("Bookings");
 
                     b.Navigation("Portofolio");
                 });

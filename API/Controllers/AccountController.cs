@@ -83,8 +83,26 @@ namespace API.Controllers
             {
                 Email = user.Email,
                 Token = await _tokenService.GenerateToken(user),
-                Basket = userBasket?.MapBasketToDto()
+                Basket = userBasket?.MapBasketToDto(),
+                Role = user.Role,
+                UserName = user.UserName
             };
+        }
+
+        [Authorize]
+        [HttpGet("userId")]
+        public async Task<ActionResult<int>> GetUserId()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            return user.Id;
+        }
+
+        [Authorize]
+        [HttpGet("userRole")]
+        public async Task<ActionResult<string>> GetUserRole()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            return user.Role;
         }
 
         [Authorize]
@@ -115,8 +133,6 @@ namespace API.Controllers
         {
             return User.Identity?.Name ?? Request.Cookies["buyerId"];
         }
-
-
          
         [Authorize]
         [HttpGet("doctors")]
@@ -138,6 +154,8 @@ namespace API.Controllers
                 .Select(user => user.Portofolio)
                 .FirstOrDefaultAsync();
         }
+        [Authorize]
+        
 
         [Authorize]
         [HttpGet("{id}", Name="portofolioByUserId")]
@@ -164,12 +182,13 @@ namespace API.Controllers
                     Phone = portof.Phone,
                     PictureUrl = portof.PictureUrl
                 };
-                user.Portofolio = portofolio;
+            user.Portofolio = portofolio;
             
             var result = await _context.SaveChangesAsync() > 0;
 
             return Ok();
         }
 
+        
     }
 }

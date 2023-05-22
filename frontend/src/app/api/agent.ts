@@ -112,7 +112,9 @@ const Account = {
     fetchPortofolio: () => requests.get('account/portofolio'),
     savePortofolio: (values: any) => requests.post('account/savePortofolio', values),
     getDoctors:() => requests.get('account/doctors'),
-    getPortofolioByUserId:(id: number) => requests.get(`account/${id}`)
+    getPortofolioByUserId:(id: number) => requests.get(`account/${id}`),
+    getUserId:() => requests.get('account/userId'),
+    getUserRole:() => requests.get('account/userRole')
 }
 
 const Orders = {
@@ -121,9 +123,21 @@ const Orders = {
     create: (values: any) => requests.post('orders', values)
 }
 
-
 const Payments = { 
     createPaymentIntent: () => requests.post('payments', {})
+}
+
+const Appointment = {
+    getAppointmentsByUserId:(id: number) => requests.get(`appointment/${id}`),
+    addAppointment:(day: string, start: string, end: string, doctorId: number, doctorName: string) => requests.post(`appointment/saveUserAppointment?day=${day}&start=${start}&end=${end}&doctorId=${doctorId}&doctorName=${doctorName}`, {}),
+    deleteUserAppointment:(id: number, username: string) => requests.delete(`appointment/deleteUserAppointment?id=${id}&username=${username}`)
+}
+
+
+const Booking = {
+    getBookingssByUserId:(id: number) => requests.get(`booking/${id}`),
+    saveBookingToUser:(day: string, start: string, end: string, doctorId: number, doctorName: string) => requests.post(`booking/saveUserBooking?day=${day}&start=${start}&end=${end}&doctorId=${doctorId}&doctorName=${doctorName}`, {}),
+    saveBookingToDoctor:(name:string, day: string, start: string, end: string, partnerId: number, partnerName: string) => requests.post(`booking/saveDoctorBooking?username=${name}&day=${day}&start=${start}&end=${end}&partnerId=${partnerId}&partnerName=${partnerName}`, {})
 }
 
 const agent = {
@@ -133,7 +147,9 @@ const agent = {
     Account,
     Orders, 
     Payments,
-    Admin
+    Admin, 
+    Appointment,
+    Booking
 }
 
 export default agent;

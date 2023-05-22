@@ -23,6 +23,10 @@
     margin-bottom: 100px;
 }
 
+.therapist-info li{
+    margin-right: 10px;
+}
+
 .therapists-list{
     list-style: none;
     display:flex;

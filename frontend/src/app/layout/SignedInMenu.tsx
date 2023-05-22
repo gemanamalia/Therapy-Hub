@@ -37,6 +37,8 @@ export default function SignedInMenu() {
             >
                 <MenuItem onClick={handleClose} component={Link} to='/profile'>Profilul meu</MenuItem>
                 <MenuItem onClick={handleClose} component={Link} to='/orders'>Comenzile mele</MenuItem>
+                <MenuItem onClick={handleClose} component={Link} to='/personalBookings'>Programările mele</MenuItem>
+
                 <MenuItem onClick={() => {
                     dispatch(signOut());
                     dispatch(clearBasket());
