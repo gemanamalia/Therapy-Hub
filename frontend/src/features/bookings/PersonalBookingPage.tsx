@@ -93,12 +93,14 @@ export default function PersonalBookingPage() {
     
         
     return (
-        <>
+        <>                  
+            <h1 className="booking-title"> Programările mele </h1>
+            
             {userRole === 'doctor' && user?.userName && (
             
                 <div className="booking">
                     {/* <p>User: {userRole}</p> */}
-                    <h1 className="booking-title"> Programările mele </h1>
+                    {/* <h1 className="booking-title"> Programările mele </h1> */}
                     <div className="personal-booking-body">
                         <button onClick={handleOpen} className="add-button">Adaugă loc liber</button>
                         <Modal 
@@ -222,7 +224,7 @@ export default function PersonalBookingPage() {
             
                 <div className="booking">
                     {/* <p>User: {userRole}</p> */}
-                    <h1 className="booking-title"> Programările mele </h1>
+                    {/* <h1 className="booking-title"> Programările mele </h1> */}
                     <div className="personal-booking-body">
                         <div className="personal-booking-free">
                             <table style={{ tableLayout: 'fixed', width: '100%' }}>

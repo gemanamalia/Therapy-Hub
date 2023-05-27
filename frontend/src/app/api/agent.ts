@@ -140,6 +140,11 @@ const Booking = {
     saveBookingToDoctor:(name:string, day: string, start: string, end: string, partnerId: number, partnerName: string) => requests.post(`booking/saveDoctorBooking?username=${name}&day=${day}&start=${start}&end=${end}&partnerId=${partnerId}&partnerName=${partnerName}`, {})
 }
 
+const Feedback = {
+    getFeedbackByDoctorId:(id: number) => requests.get(`feedback/${id}`),
+    addFeedback:(text: string, doctorId: number) => requests.post(`feedback?text=${text}&doctorId=${doctorId}`, {})
+}
+
 const agent = {
     Catalog,
     TestErrors,
@@ -149,7 +154,8 @@ const agent = {
     Payments,
     Admin, 
     Appointment,
-    Booking
+    Booking,
+    Feedback
 }
 
 export default agent;

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20230508182313_UpdateProduct")]
+    [Migration("20230527122846_UpdateProduct")]
     partial class UpdateProduct
     {
         /// <inheritdoc />
@@ -124,6 +124,23 @@ namespace API.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Bookings");
+                });
+
+            modelBuilder.Entity("API.Entities.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Feedbacks");
                 });
 
             modelBuilder.Entity("API.Entities.LinkContact", b =>

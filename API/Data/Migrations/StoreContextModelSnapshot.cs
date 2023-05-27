@@ -123,6 +123,23 @@ namespace API.Data.Migrations
                     b.ToTable("Bookings");
                 });
 
+            modelBuilder.Entity("API.Entities.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Feedbacks");
+                });
+
             modelBuilder.Entity("API.Entities.LinkContact", b =>
                 {
                     b.Property<int>("Id")

@@ -16,7 +16,6 @@ export default function Profile() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [refresh, setRefresh] = useState(false); 
-
   
     useEffect(() => {
         agent.Account.fetchPortofolio()
@@ -44,7 +43,6 @@ export default function Profile() {
         setLoading(true);
         try {
             var result = await agent.Account.savePortofolio(portofolio);
-            // console.log("rezultat", result);
             setRefresh((prevState) => !prevState); 
             setLoading(false);
         } catch (error) {

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Extensions;
 using API.RequestHelpers;
-using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 using API.DTOs;
 using AutoMapper;

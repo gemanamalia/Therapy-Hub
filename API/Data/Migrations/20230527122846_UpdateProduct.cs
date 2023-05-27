@@ -71,6 +71,20 @@ namespace API.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Feedbacks",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    DoctorId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Text = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Feedbacks", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LinkContacts",
                 columns: table => new
                 {
@@ -506,6 +520,9 @@ namespace API.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Bookings");
+
+            migrationBuilder.DropTable(
+                name: "Feedbacks");
 
             migrationBuilder.DropTable(
                 name: "LinkContacts");

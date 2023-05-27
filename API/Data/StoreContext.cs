@@ -22,6 +22,7 @@ namespace API.Data
         public DbSet<Testimonial>  Testimonials { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

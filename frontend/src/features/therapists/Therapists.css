@@ -73,3 +73,27 @@
 .booking-button:hover {
     background-color: #41705b;
 }
+
+
+.feedback-button {
+    background-color: #ffa07a;
+    color: white;
+    font-size: 16px;
+    width: 220px;
+    height: 30px;
+    border-radius: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    font-style: italic;
+}
+
+.feedback-button:hover {
+    background-color: #e8906d;
+}
+
+.grid-container {
+    display: inline-grid;
+    /* grid-template-columns: auto auto auto; */
+    /* justify-content: space-between; */
+}

@@ -1,0 +1,121 @@
+.feedback {
+    font-family: Sans-Serif;
+    /* font-family: 'Playfair Display', serif; */
+    /* color: #523a25; */
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.feedback-title {
+    margin-top: 50px;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+.feedback-body {
+    margin-top: 100px;
+}
+
+/* .feedback-container {
+
+} */
+.add-feedback-button {
+    background-color: #ffa07a;
+    color: white;
+    font-size: 16px;
+    width: 220px;
+    height: 30px;
+    border-radius: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    font-style: italic;
+}
+
+.add-feedback-button:hover {
+background-color: #e8906d;
+}
+
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.feedback-modal-form {
+    background-color: #fff;
+    width: 400px;
+    height: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    border-radius: 5px;
+  }
+
+.feedback-modal-label {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+  }  
+
+.feedback-modal-input {
+    display: block;
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#text {
+    height: 100px;
+    resize: none;
+}
+
+.feedback-save-button {
+    width: 130px;
+    height: 45px;
+    background-color:#523a25;
+    color: white;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 19px;   
+}
+
+.feedback-close-button {
+    width: 130px;
+    height: 45px;
+    background-color:#523a25;
+    color: white;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-save-button:hover {
+    background-color:#261b11;
+}
+
+.feedback-close-button:hover {
+    background-color:#261b11;
+}
+
+.feedback-button-grid {
+    margin-top: 30px;
+}
+
+
+.feedback-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}

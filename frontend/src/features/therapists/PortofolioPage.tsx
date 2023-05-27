@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import agent from "../../app/api/agent";
 import { Portofolio } from "../../app/models/portofolio";
 import { CardMedia } from "@mui/material";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   doctorId: number;
@@ -17,6 +17,15 @@ export default function PortofolioPage({ doctorId, email, name }: Props) {
     
     const routeChange = () =>{
       navigate('/booking', {
+        state: {
+          doctorId,
+          email,
+          name,
+        },
+      });
+    }
+    const routeChangeForFeedback = () =>{
+      navigate('/feedback', {
         state: {
           doctorId,
           email,
@@ -61,7 +70,10 @@ export default function PortofolioPage({ doctorId, email, name }: Props) {
                     <li><b>Email:</b> {email}</li>
                     <li><b>Telefon:</b> {portofolio?.phone}</li>
                 </div>
-                <button  onClick={routeChange} className="booking-button">Programează-te acum!</button>         
+                <div className="grid-container">
+                  <button  onClick={routeChange} className="booking-button">Programează-te acum!</button>         
+                  <button  onClick={routeChangeForFeedback} className="feedback-button">Vezi recenzii</button>         
+                </div>
             </div>
         </div>        
   );
