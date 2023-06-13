@@ -13,8 +13,8 @@ namespace API.Data
             {
                 var user = new User 
                 {
-                    UserName = "bob",
-                    Email = "bob@test.com",
+                    UserName = "Amalia",
+                    Email = "amalia@gmail.com",
                     Role = "member"
                 };
 
@@ -23,9 +23,9 @@ namespace API.Data
 
                 var doctor = new User 
                 {
-                    UserName = "ben",
-                    Email = "ben@test.com",
-                    Role = "doctor"
+                    UserName = "AlexandruPopa",
+                    Email = "alexandru.popa@gmail.com",
+                    Role = "doctor",
                 };
 
                 await userManager.CreateAsync(doctor, "Pa$$w0rd");
@@ -33,8 +33,8 @@ namespace API.Data
             
                 var doctor2 = new User 
                 {
-                    UserName = "ana",
-                    Email = "ana@test.com",
+                    UserName = "AnaMihalache",
+                    Email = "ana.mihalache@gmail.com",
                     Role = "doctor"
                 };
 
@@ -44,7 +44,7 @@ namespace API.Data
                 var admin = new User 
                 {
                     UserName = "admin",
-                    Email = "admin@test.com",
+                    Email = "admin@gmail.com",
                     Role="admin"
                 };
 

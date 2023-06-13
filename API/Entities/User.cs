@@ -5,7 +5,6 @@ namespace API.Entities
     public class User : IdentityUser<int>
     {
         public string Role { get; set; } 
-        // public string UserName { get; set; }     
         public UserAddress Address { get; set; }
         public UserPortofolio Portofolio { get; set; }
         
@@ -16,3 +15,15 @@ namespace API.Entities
         public ICollection<Booking> Bookings { get; set; }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

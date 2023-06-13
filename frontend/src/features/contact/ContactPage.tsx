@@ -27,7 +27,7 @@ export default function ContactPage() {
 
     return (
         <>
-            <h1 className="contact-title">Ghid pentru sănătate mentală: Unde să găsești ajutor și suport</h1>
+            <h1 className="contact-title">Ghid pentru sănătate mintală: Unde să găsești ajutor și suport</h1>
             
             <div className="advice-body">
                 <h3>Dacă o persoană are nevoie de ajutor pentru sănătatea mentală, există câteva recomandări importante:</h3>

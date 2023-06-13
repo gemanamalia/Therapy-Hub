@@ -9,6 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useAppSelector } from "../store/configureStore";
 import SignedInMenu from "./SignedInMenu";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import AdminMenu from "./AdminMenu";
 
 const theme = createTheme({
   palette: {
@@ -83,13 +84,31 @@ export default function Header({darkMode, handleThemeChange} : Props) {
                         </ListItem>
                     ))}
                     {user && user.roles?.includes('Admin' ) &&
-                    <ListItem
-                            component={NavLink}
-                            to={'/inventory'}
-                            sx={ navStyles }
-                        >
-                            INVENTAR
-                    </ListItem>}
+                        <AdminMenu />
+                    // <>
+                    //     <ListItem
+                    //         component={NavLink}
+                    //         to={'/inventory'}
+                    //         sx={ navStyles }
+                    //     >
+                    //         INVENTAR
+                    //     </ListItem>
+                    //     <ListItem
+                    //         component={NavLink}
+                    //         to={'/accounts'}
+                    //         sx={ navStyles }
+                    //     >
+                    //         CONTURI
+                    //     </ListItem>
+                    //     <ListItem
+                    //         component={NavLink}
+                    //         to={'/feedbackinventory'}
+                    //         sx={ navStyles }
+                    //     >
+                    //         RECENZII
+                    //     </ListItem>
+                    // </>
+                    }
                 </List>
 
                 <Box display='flex' alignItems='center'>

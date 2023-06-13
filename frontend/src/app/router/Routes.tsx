@@ -19,6 +19,8 @@ import Profile from "../../features/profile/Profile";
 import BookingPage from "../../features/bookings/BookingPage";
 import PersonalBookingPage from "../../features/bookings/PersonalBookingPage";
 import FeedbackPage from "../../features/feedback/Feedback";
+import Accounts from "../../features/admin/Accounts";
+import FeedbackInnventory from "../../features/admin/FeedbackInventory";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +40,8 @@ export const router = createBrowserRouter([
             // admin routes
             {element: <RequireAuth roles={['Admin']} />, children: [
                 { path: 'inventory', element: <Inventory />},
+                { path: 'accounts', element: <Accounts />},
+                { path: 'feedbackinventory', element: <FeedbackInnventory />},
               ]},
             
             { path: '', element: <HomePage />},

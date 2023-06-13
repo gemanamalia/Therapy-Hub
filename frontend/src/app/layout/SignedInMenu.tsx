@@ -27,7 +27,7 @@ export default function SignedInMenu() {
                 onClick={handleClick}
                 sx={{ typography: 'h6' }}
             >
-                {user?.email}
+                Contul meu
             </Button>
             <Menu
                 anchorEl={anchorEl}

@@ -129,8 +129,8 @@ const Payments = {
 
 const Appointment = {
     getAppointmentsByUserId:(id: number) => requests.get(`appointment/${id}`),
-    addAppointment:(day: string, start: string, end: string, doctorId: number, doctorName: string) => requests.post(`appointment/saveUserAppointment?day=${day}&start=${start}&end=${end}&doctorId=${doctorId}&doctorName=${doctorName}`, {}),
-    deleteUserAppointment:(id: number, username: string) => requests.delete(`appointment/deleteUserAppointment?id=${id}&username=${username}`)
+    addAppointment:(day: string, start: string, end: string, doctorId: number, doctorName: string)  => requests.post(`appointment/saveUserAppointment?day=${day}&start=${start}&end=${end}&doctorId=${doctorId}&doctorName=${doctorName}`, {}),
+    deleteUserAppointment:(id: number, username: string)  => requests.delete(`appointment/deleteUserAppointment?id=${id}&username=${username}`)
 }
 
 
