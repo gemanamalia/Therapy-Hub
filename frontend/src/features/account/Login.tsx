@@ -97,12 +97,17 @@ export default function Login() {
                     </LoadingButton>
                 </ThemeProvider>
                 
-                <Grid container>
-                <Grid item>
-                    <Link to='/register' >
-                    {"Don't have an account? Register here"}
-                    </Link>
-                </Grid>
+                <Grid container flexDirection="column">
+                    <Grid item>
+                        <Link to='/register' style={{ textDecoration: 'none' }}>
+                        {"Don't have an account? Register here"}
+                        </Link>
+                    </Grid>
+                    <Grid item>
+                        <Link to='/apply' style={{ textDecoration: 'none' }}>
+                        {"Be part of our team!"}
+                        </Link>
+                    </Grid>
                 </Grid>
             </Box>
 

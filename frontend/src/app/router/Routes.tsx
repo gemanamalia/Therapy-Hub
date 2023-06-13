@@ -21,6 +21,7 @@ import PersonalBookingPage from "../../features/bookings/PersonalBookingPage";
 import FeedbackPage from "../../features/feedback/Feedback";
 import Accounts from "../../features/admin/Accounts";
 import FeedbackInnventory from "../../features/admin/FeedbackInventory";
+import { ApplyForm } from "../../features/team/ApplyForm";
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,7 @@ export const router = createBrowserRouter([
             { path: 'basket', element: <BasketPage />},
             { path: 'login', element: <Login />},
             { path: 'register', element: <Register />},
+            { path: 'apply', element: <ApplyForm />},
             { path: '*', element: <Navigate replace to ='/not-found' />}
         ]
     }

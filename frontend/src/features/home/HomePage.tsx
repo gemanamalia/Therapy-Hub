@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
 import { Testimonial } from "../../app/models/testimonial";
+import { Grid } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
     const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
@@ -23,6 +25,17 @@ export default function HomePage() {
                         {testimonials.map((testimonial, i) => <p key={testimonial.id}>„{testimonial.text}”</p>)}
                     </div>
                     <p className="page-intro-home">Dacă ești pregătit să investești în sănătatea ta mentală și bunăstare, ne-ar face plăcere să te ajutăm. Răsfoiește portofoliul nostru de terapeuți astăzi și fă primul pas spre o viață mai fericită și mai sănătoasă.</p>
+                </div>
+            </div>
+            <div className="careers">
+                <h1 className="careers-title">Cariere</h1>
+                <div className="careers-body">
+                    <p>Vrei să fii parte din echipa noastră de terapeuți licențiați?</p>
+                    <Grid item >
+                        <Link to='/apply' style={{ textDecoration: 'none'}}>
+                            {"Aplică aici!"}
+                        </Link>
+                    </Grid>
                 </div>
             </div>
         </>

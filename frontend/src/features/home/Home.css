@@ -1,7 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .home {
     font-family: Sans-Serif;
-    /* font-family: 'Playfair Display', serif; */
-    /* color: #523a25; */
     font-size: 20px;
     margin-bottom: 50px;
 }
@@ -26,4 +30,27 @@
     text-align: justify;
     font-style: italic;
     padding: 1px 30px;
+}
+
+
+.careers {
+    margin-top: 100px;
+    font-family: Sans-Serif;
+    font-size: 20px;
+    background-color: #c5a297;
+    width: 100vw; 
+    margin-left: calc(50% - 50vw); 
+    margin-right: calc(50% - 50vw); 
+}
+
+.careers-title {
+    color: #523a25;
+    font-size: 35px;
+    margin-left: 50px;
+    font-family: 'Playfair Display', serif;
+}
+
+.careers-body {
+    color: #523a25;
+    margin-left: 50px;
 }

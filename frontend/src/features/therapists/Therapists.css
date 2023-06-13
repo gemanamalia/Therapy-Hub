@@ -59,7 +59,7 @@
 }
 
 .booking-button {
-    background-color: #2e5041;
+    background-color: #41705b;
     color: white;
     font-size: 18px;
     width: 220px;
@@ -71,7 +71,8 @@
 }
 
 .booking-button:hover {
-    background-color: #41705b;
+    background-color: #2e5041;
+    
 }
 
 

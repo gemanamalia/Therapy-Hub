@@ -123,10 +123,15 @@ export default function Register() {
                     </LoadingButton>
                 </ThemeProvider>
 
-                <Grid container>
+                <Grid container  flexDirection="column">
                     <Grid item>
                         <Link to='/login' style={{ textDecoration: 'none' }}>
                             {"Already have an account? Sign In"}
+                        </Link>
+                    </Grid>
+                    <Grid item>
+                        <Link to='/apply' style={{ textDecoration: 'none' }}>
+                        {"Be part of our team!"}
                         </Link>
                     </Grid>
                 </Grid>
