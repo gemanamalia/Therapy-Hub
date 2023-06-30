@@ -189,6 +189,47 @@ namespace API.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteUser(int id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            
+            if (user == null) return NotFound();
+            
+            var result = await _userManager.DeleteAsync(user);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.Code, error.Description);
+                }
+                
+                return BadRequest();
+            }
+
+            return Ok();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("users")]
+        public async Task<ActionResult<List<UserDto>>> GetAllUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            var userDtos = users.Select(user => new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                Role = user.Role
+            }).ToList();
+
+            return userDtos;
+        }
+
+
+
         
     }
 }

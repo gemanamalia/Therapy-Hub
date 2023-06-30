@@ -53,7 +53,7 @@ export default function Inventory() {
                         <TableRow>
                             <TableCell>#</TableCell>
                             <TableCell align="left">Produs</TableCell>
-                            <TableCell align="right">Preț</TableCell>
+                            <TableCell align="center">Preț</TableCell>
                             <TableCell align="center">Categorie</TableCell>
                             <TableCell align="center">Autor</TableCell>
                             <TableCell align="center">Cantitate</TableCell>
@@ -75,7 +75,7 @@ export default function Inventory() {
                                         <span>{product.name}</span>
                                     </Box>
                                 </TableCell>
-                                <TableCell align="right">{currencyFormat(product.price)}</TableCell>
+                                <TableCell align="center">{currencyFormat(product.price)}</TableCell>
                                 <TableCell align="center">{product.type}</TableCell>
                                 <TableCell align="center">{product.brand}</TableCell>
                                 <TableCell align="center">{product.quantityInStock}</TableCell>

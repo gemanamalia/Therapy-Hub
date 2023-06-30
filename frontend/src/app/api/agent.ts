@@ -81,7 +81,8 @@ function createFormData(item: any) {
 const Admin = {
     createProduct: (product: any) => requests.postForm('products', createFormData(product)),
     updateProduct: (product: any) => requests.putForm('products', createFormData(product)),
-    deleteProduct: (id: number) => requests.delete(`products/${id}`)
+    deleteProduct: (id: number) => requests.delete(`products/${id}`),
+    deleteUser: (id: number) => requests.delete(`account/${id}`)
 }
 
 const Catalog = {
@@ -114,7 +115,8 @@ const Account = {
     getDoctors:() => requests.get('account/doctors'),
     getPortofolioByUserId:(id: number) => requests.get(`account/${id}`),
     getUserId:() => requests.get('account/userId'),
-    getUserRole:() => requests.get('account/userRole')
+    getUserRole:() => requests.get('account/userRole'),
+    getAllUsers:() => requests.get('account/users')
 }
 
 const Orders = {

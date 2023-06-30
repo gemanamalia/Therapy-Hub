@@ -12,12 +12,9 @@ export const ApplyForm = () => {
         if (form.current) {
             await emailjs.sendForm('service_2z5z6td', 'template_rrhclol', form.current, '0GdTHZkz0XdPWFdlA')
                .then((result) => {
-                    console.log(result.text);
-                    console.log("message sent");
                     if (form.current) {
                         form.current.reset();
                       }               
-                    // window.alert("Aplicația a fost trimisă cu succes!");
                     setIsSubmitted(true);
                 }, (error) => {
                     console.log(error.text);
