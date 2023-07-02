@@ -33,8 +33,6 @@ export default function PersonalBookingPage() {
             agent.Appointment.getAppointmentsByUserId(userId)
                 .then((appointments) => {
                     setAppointments(appointments);
-                    console.log(bookings); 
-                    console.log("roluri:", user?.roles) 
                 })
                 .catch((error) => console.log(error));
 
@@ -237,7 +235,7 @@ export default function PersonalBookingPage() {
                                     <th>Interval orar</th>
                                     <th>Psiholog</th>
                                     <th>Status</th>
-                                    <th>Anulare</th>
+                                    {/* <th>Anulare</th> */}
                                     </tr>
                                 </thead>
                                 
@@ -248,14 +246,14 @@ export default function PersonalBookingPage() {
                                         <td>{a.start} - {a.end}</td>
                                         <td>{a.partnerName}</td>
                                         <td>Activă</td>
-                                        <td>
+                                        {/* <td>
                                             <button 
                                                 className="cancel-button"
                                                 onClick={() => handleCancelBooking()}
                                             >
                                                 Anulează
                                             </button>
-                                        </td>
+                                        </td> */}
                                     </tr>
                                     ))} 
                                 </tbody>

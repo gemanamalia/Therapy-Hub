@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateProduct : Migration
+    public partial class NewMig1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -358,7 +358,8 @@ namespace API.Data.Migrations
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     Phone = table.Column<string>(type: "TEXT", nullable: true),
                     ContactAddress = table.Column<string>(type: "TEXT", nullable: true),
-                    PictureUrl = table.Column<string>(type: "TEXT", nullable: true)
+                    PictureUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    FullName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -21,15 +21,15 @@ namespace API.Data
                 await userManager.CreateAsync(user, "Pa$$w0rd");
                 await userManager.AddToRoleAsync(user, "member");
 
-                var doctor = new User 
+                var doctor1 = new User 
                 {
                     UserName = "AlexandruPopa",
                     Email = "alexandru.popa@gmail.com",
                     Role = "doctor",
                 };
 
-                await userManager.CreateAsync(doctor, "Pa$$w0rd");
-                await userManager.AddToRoleAsync(doctor, "doctor");
+                await userManager.CreateAsync(doctor1, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor1, "doctor");
             
                 var doctor2 = new User 
                 {
@@ -37,9 +37,50 @@ namespace API.Data
                     Email = "ana.mihalache@gmail.com",
                     Role = "doctor"
                 };
-
+                
                 await userManager.CreateAsync(doctor2, "Pa$$w0rd");
                 await userManager.AddToRoleAsync(doctor2, "doctor");
+
+                var doctor3 = new User 
+                {
+                    UserName = "IoanaToma",
+                    Email = "ioana.toma@gmail.com",
+                    Role = "doctor",
+                };
+
+                await userManager.CreateAsync(doctor3, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor3, "doctor");
+
+                var doctor4 = new User 
+                {
+                    UserName = "AlbertPopescu",
+                    Email = "albert.popescu@gmail.com",
+                    Role = "doctor",
+                };
+
+                await userManager.CreateAsync(doctor4, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor4, "doctor");
+
+                var doctor5 = new User 
+                {
+                    UserName = "AndreiStoica",
+                    Email = "andrei.stoica@gmail.com",
+                    Role = "doctor",
+                };
+
+                await userManager.CreateAsync(doctor5, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor5, "doctor");
+
+                 var doctor6 = new User 
+                {
+                    UserName = "AlexandraRusu",
+                    Email = "alexandra.rusu@gmail.com",
+                    Role = "doctor",
+                };
+
+                await userManager.CreateAsync(doctor6, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(doctor6, "doctor");
+            
             
                 var admin = new User 
                 {
