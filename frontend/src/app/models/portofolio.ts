@@ -5,5 +5,6 @@ export interface Portofolio {
     contactAddress: string;
     phone: string;
     pictureUrl: string;
+    fullName: string;
 }
   

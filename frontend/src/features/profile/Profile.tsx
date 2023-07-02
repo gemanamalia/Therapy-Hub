@@ -64,6 +64,10 @@ export default function Profile() {
                     <p> {user?.email} </p>
                 </li>
                 <li>
+                    <h3> Nume complet: </h3>
+                    <p>{portofolioCopy?.fullName} </p>
+                </li>
+                <li>
                     <h3> Despre mine: </h3>
                     <p>{portofolioCopy?.description} </p>
                 </li>
@@ -87,6 +91,16 @@ export default function Profile() {
             >
                 <form onSubmit={handleSubmit} className="modal-form">
                     <Grid container direction="column">
+                        <Grid item>
+                             <label className="modal-label">Nume complet:</label>
+                            <input
+                                className="modal-input"
+                                onChange={handleChange}
+                                type="text"
+                                name="fullName"
+                                value={portofolio?.fullName || ""}
+                            />
+                        </Grid>
                         <Grid item>
                             <label className="modal-label" >Despre mine:</label>
                             <textarea

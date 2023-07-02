@@ -58,7 +58,7 @@ export default function Catalog() {
                         <Paper sx={{ mb: 2, p: 2}} 
                             style={{ boxShadow: '0px 1px 9px  rgba(0,0,0,0.5)' }}
                         >
-                        <Typography>Preț:</Typography>
+                        <Typography>Sortează:</Typography>
                         <RadioButtonGroup 
                                 selectedValue={productParams.orderBy}
                                 options={sortOptions}

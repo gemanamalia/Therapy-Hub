@@ -62,7 +62,7 @@ export default function PortofolioPage({ doctorId, email, name }: Props) {
             </div>
         
             <div className="therapist-info">
-                <li><b>Psiholog:</b> {name.toUpperCase()}</li>
+                <li><b>Psiholog:</b> {portofolio?.fullName}</li>
                 <li><b>Despre mine:</b> {portofolio?.description}</li>
                 <li><b>Contactează-mă:</b></li>
                 <div className="contact-info">

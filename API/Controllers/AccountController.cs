@@ -180,7 +180,8 @@ namespace API.Controllers
                     ContactAddress = portof.ContactAddress,
                     Description = portof.Description,
                     Phone = portof.Phone,
-                    PictureUrl = portof.PictureUrl
+                    PictureUrl = portof.PictureUrl,
+                    FullName = portof.FullName
                 };
             user.Portofolio = portofolio;
             

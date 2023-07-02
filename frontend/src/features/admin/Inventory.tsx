@@ -1,6 +1,6 @@
 import { Edit, Delete } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
-import { Box, Typography, Button, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
+import { Box, Typography, Button, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, createTheme } from "@mui/material";
 import { currencyFormat } from "../../app/util/util";
 import { removeProduct, setPageNumber } from "../catalog/catalogSlice";
 import { useAppDispatch } from "../../app/store/configureStore";
@@ -45,7 +45,7 @@ export default function Inventory() {
         <>
             <Box display='flex' justifyContent='space-between'>
                 <Typography sx={{ p: 2 }} variant='h4'>Inventar produse</Typography>
-                <Button onClick={() => setEditMode(true)}  sx={{ m: 2 }} size='large' variant='contained'>Carte nouă</Button>
+                <Button onClick={() => setEditMode(true)}  sx={{ m: 2 }} style={{backgroundColor: '#523a25', color: '#fff'}}>Carte nouă</Button>
             </Box>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">

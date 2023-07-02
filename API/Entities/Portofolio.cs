@@ -6,5 +6,6 @@ namespace API.Entities
         public string Phone { get; set; }
         public string ContactAddress { get; set; }
         public string  PictureUrl { get; set; }
+        public string FullName { get; set; }
     }
 }
