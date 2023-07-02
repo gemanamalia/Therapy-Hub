@@ -4,6 +4,7 @@ using API.Entities;
 using API.RequestHelpers;
 using API.Services;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -48,6 +49,22 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+    [Authorize]
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteFeedback(int id)
+    {
+        var feedback = await _context.Feedbacks.FindAsync(id);
+        if (feedback == null)
+        {
+            return NotFound(); 
+        }
+
+        _context.Feedbacks.Remove(feedback);
+        await _context.SaveChangesAsync();
+
+        return Ok(); 
+    }
 
     }
 }

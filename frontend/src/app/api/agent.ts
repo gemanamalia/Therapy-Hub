@@ -82,7 +82,8 @@ const Admin = {
     createProduct: (product: any) => requests.postForm('products', createFormData(product)),
     updateProduct: (product: any) => requests.putForm('products', createFormData(product)),
     deleteProduct: (id: number) => requests.delete(`products/${id}`),
-    deleteUser: (id: number) => requests.delete(`account/${id}`)
+    deleteUser: (id: number) => requests.delete(`account/${id}`),
+    deleteFeedback: (id: number) => requests.delete(`feedback/${id}`) 
 }
 
 const Catalog = {
@@ -143,6 +144,7 @@ const Booking = {
 }
 
 const Feedback = {
+    getAllFeedback: () => requests.get("feedback"),
     getFeedbackByDoctorId:(id: number) => requests.get(`feedback/${id}`),
     addFeedback:(text: string, doctorId: number) => requests.post(`feedback?text=${text}&doctorId=${doctorId}`, {})
 }
