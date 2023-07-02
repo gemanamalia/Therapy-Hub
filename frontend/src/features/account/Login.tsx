@@ -46,7 +46,7 @@ export default function Login() {
     async function submitForm(data: FieldValues) {
         try {
             await dispatch(signInUser(data));
-            navigate(location.state?.from || '/catalog');
+            navigate(location.state?.from || '/');
             // firebase login
             // loginFirebase(data);
         } catch (error) {

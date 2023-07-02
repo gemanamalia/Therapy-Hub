@@ -54,7 +54,7 @@ namespace API.Controllers
         public async Task<ActionResult> Register(RegisterDto registerDto)
         {
             var user = new User{UserName = registerDto.UserName, Email = registerDto.Email};
-
+        
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if (!result.Succeeded)

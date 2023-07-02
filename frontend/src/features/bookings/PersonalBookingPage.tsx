@@ -12,7 +12,6 @@ import { useAppSelector } from "../../app/store/configureStore";
 export default function PersonalBookingPage() {
    const {user} = useAppSelector(state => state.account);
    const [userId, setUserId] =  useState();
-   const [userRole, setUserRole] = useState();
    const [loading, setLoading] = useState(true);  
    const [appointments, setAppointments] = useState<Appointment[]>([]);
    const [bookings, setBookings] = useState<Booking[]>([]);
@@ -22,12 +21,6 @@ export default function PersonalBookingPage() {
    const [appointment, setAppointment] = useState<Appointment | null>(null);
    const [refresh, setRefresh] = useState(false); 
 
-   
-   useEffect(() => {
-        agent.Account.getUserRole()
-            .then((role) => setUserRole(role))
-            .catch((error) => console.log(error))
-    }, [refresh]);
 
     useEffect(() => {
         agent.Account.getUserId()
@@ -38,7 +31,11 @@ export default function PersonalBookingPage() {
     useEffect(() => {
         if (userId) {
             agent.Appointment.getAppointmentsByUserId(userId)
-                .then((appointments) => setAppointments(appointments))
+                .then((appointments) => {
+                    setAppointments(appointments);
+                    console.log(bookings); 
+                    console.log("roluri:", user?.roles) 
+                })
                 .catch((error) => console.log(error));
 
             agent.Booking.getBookingssByUserId(userId)
@@ -96,7 +93,7 @@ export default function PersonalBookingPage() {
         <>                  
             <h1 className="booking-title"> Programările mele </h1>
             
-            {userRole === 'doctor' && user?.userName && (
+            {user?.roles?.includes("Doctor") && (
             
                 <div className="booking">
                     {/* <p>User: {userRole}</p> */}
@@ -220,10 +217,10 @@ export default function PersonalBookingPage() {
                 </div>
             )}
 
-            {userRole === 'member' && (
+            {user?.roles?.includes("Member") && (
             
                 <div className="booking">
-                    {/* <p>User: {userRole}</p> */}
+                    {/* <p>User: ami</p> */}
                     {/* <h1 className="booking-title"> Programările mele </h1> */}
                     <div className="personal-booking-body">
                         <div className="personal-booking-free">
